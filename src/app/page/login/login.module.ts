@@ -7,6 +7,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
+import { FormUsernameComponent } from './form-username/form-username.component';
+import { FormPhoneComponent } from './form-phone/form-phone.component';
 
 @NgModule({
   imports: [
@@ -14,8 +16,16 @@ import { LoginPage } from './login.page';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
   ],
-  declarations: [LoginPage]
+  exports: [
+    FormPhoneComponent,
+    FormUsernameComponent
+  ],
+  declarations: [
+    LoginPage,
+    FormPhoneComponent,
+    FormUsernameComponent
+  ]
 })
 export class LoginPageModule {}

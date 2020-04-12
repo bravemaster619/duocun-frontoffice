@@ -13,19 +13,19 @@
       <img src="assets/img/login.jpg">
     </ion-col>
   </ion-row>
-  <form>
-    <ion-list lines="full" class="">
-      <ion-item>
-        <ion-label position="stacked" translate="Phone Number"></ion-label>
-        <ion-input required type="text" autocomplete="on" autofocus=true inputmode="tel" minlength="6" maxlength="20"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="stacked" translate="Password"></ion-label>
-        <ion-input required type="password"></ion-input>
-      </ion-item>
-    </ion-list>
-    <div class="ion-padding">
-      <ion-button expand="block" type="submit" translate="Sign In"></ion-button>
+  <div *ngIf="this.loginMode === 'username'; Else formPhone">
+    <app-form-username></app-form-username>
+    <div class="ion-padding-horizontal">
+      <a (click)="toggleLoginMode()">{{'Sign In By Phone' | translate}}</a>
     </div>
-  </form>
+  </div>
 </ion-content>
+
+<ng-template #formPhone>
+  <div>
+    <app-form-phone></app-form-phone>
+    <div class="ion-padding-horizontal">
+      <a (click)="toggleLoginMode()">{{ 'Sign In By Username' | translate }}</a>
+    </div>
+  </div>
+</ng-template>
