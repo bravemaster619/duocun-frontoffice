@@ -7,5 +7,8 @@
     "Sign In By Phone": "Sign In By Phone",
     "Sign In By Username": "Sign In By Username",
     "Send OTP Code": "Send OTP Code",
-    "Resend OTP Code": "Resend OTP Code"
+    "Resend OTP Code": "Resend OTP Code",
+    "Sign Up": "Sign Up",
+    "Verification Code": "Verification Code",
+    "Password Confirmation": "Password Confirmation"
 }
