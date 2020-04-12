@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormPhoneComponent implements OnInit {
 
-  constructor() { }
+  isOtpSent: boolean
 
-  ngOnInit() {}
+  constructor() { 
+    this.isOtpSent = false;
+  }
+
+  ngOnInit() {
+    
+  }
 
 }

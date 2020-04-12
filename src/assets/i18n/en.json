@@ -3,5 +3,9 @@
     "Sign In": "Sign In",
     "Username": "Username",
     "Password": "Password",
-    "Phone Number": "Phone Number"
+    "Phone Number": "Phone Number",
+    "Sign In By Phone": "Sign In By Phone",
+    "Sign In By Username": "Sign In By Username",
+    "Send OTP Code": "Send OTP Code",
+    "Resend OTP Code": "Resend OTP Code"
 }

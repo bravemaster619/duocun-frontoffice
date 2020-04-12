@@ -10,22 +10,26 @@
 <ion-content>
   <ion-row class="ion-padding-vertical">
     <ion-col class="ion-text-center">
-      <img src="assets/img/login.jpg">
+      <img alt="Login by password" src="assets/img/login.jpg" *ngIf="loginMode === 'username'; Else loginByPhoneImage"/>
     </ion-col>
   </ion-row>
   <div *ngIf="this.loginMode === 'username'; Else formPhone">
     <app-form-username></app-form-username>
-    <div class="ion-padding-horizontal">
-      <a (click)="toggleLoginMode()">{{'Sign In By Phone' | translate}}</a>
+    <div class="ion-padding-horizontal ion-text-center">
+      <ion-label color="medium" (click)="toggleLoginMode()">{{'Sign In By Phone' | translate}}</ion-label>
     </div>
   </div>
 </ion-content>
 
+<ng-template #loginByPhoneImage>
+  <img alt="Login by phone otp" src="assets/img/login-by-phone.jpg" />
+</ng-template>
+
 <ng-template #formPhone>
   <div>
     <app-form-phone></app-form-phone>
-    <div class="ion-padding-horizontal">
-      <a (click)="toggleLoginMode()">{{ 'Sign In By Username' | translate }}</a>
+    <div class="ion-padding-horizontal ion-text-center">
+      <ion-label color="medium" (click)="toggleLoginMode()">{{ 'Sign In By Username' | translate }}</ion-label>
     </div>
   </div>
 </ng-template>
