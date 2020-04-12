@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { HomePage } from './home.page';
-import { createTranslateLoader } from '../app.module';
+import { createTranslateLoader } from '../../app.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('HomePage', () => {
