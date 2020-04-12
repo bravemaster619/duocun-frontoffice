@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { FormPhoneComponent } from './form-phone.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('FormPhoneComponent', () => {
   let component: FormPhoneComponent;
@@ -10,7 +11,10 @@ describe('FormPhoneComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FormPhoneComponent ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+        IonicModule.forRoot(),
+        TranslateModule.forRoot()
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(FormPhoneComponent);
