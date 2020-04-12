@@ -15,11 +15,21 @@ describe('AuthenticationService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should store jwt token to storage', (done) => {
+  it('should authenticate after login', (done) => {
     const service: AuthenticationService = TestBed.get(AuthenticationService);
     service.login('my token').then(() => {
       expect(service.isAuthenticated()).toBe(true);
       done();
+    })
+  })
+
+  it ('should not authenticate after log out', (done) => {
+    const service: AuthenticationService = TestBed.get(AuthenticationService);
+    service.login('my token').then(() => {
+      service.logout().then(() => {
+        expect(service.isAuthenticated()).toBe(false);
+        done();
+      })
     })
   })
 
