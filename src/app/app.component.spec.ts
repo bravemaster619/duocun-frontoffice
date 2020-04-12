@@ -6,10 +6,14 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { IonicStorageModule } from '@ionic/storage';
+import { createTranslateLoader } from './app.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
 
-  let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy;
+  let statusBarSpy, splashScreenSpy, platformReadySpy, platformSpy, ionicStorage;
 
   beforeEach(async(() => {
     statusBarSpy = jasmine.createSpyObj('StatusBar', ['styleDefault']);
@@ -20,6 +24,16 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [
+        HttpClientModule,
+        TranslateModule.forRoot({
+          loader: {
+            provide: TranslateLoader,
+            useFactory: (createTranslateLoader),
+            deps: [HttpClient]
+          }
+        }),
+      ],
       providers: [
         { provide: StatusBar, useValue: statusBarSpy },
         { provide: SplashScreen, useValue: splashScreenSpy },
