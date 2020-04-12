@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-center">{{'Sign In'|translate}}</ion-title>
+    <ion-title class="ion-text-center" translate="Sign In"></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +16,7 @@
   <div *ngIf="this.loginMode === 'username'; Else formPhone">
     <app-form-username></app-form-username>
     <div class="ion-padding-horizontal ion-text-center">
-      <ion-label color="medium" (click)="toggleLoginMode()">{{'Sign In By Phone' | translate}}</ion-label>
+      <ion-label color="medium" (click)="toggleLoginMode()" translate="Sign In By Phone"></ion-label>
     </div>
   </div>
 </ion-content>
@@ -29,7 +29,7 @@
   <div>
     <app-form-phone></app-form-phone>
     <div class="ion-padding-horizontal ion-text-center">
-      <ion-label color="medium" (click)="toggleLoginMode()">{{ 'Sign In By Username' | translate }}</ion-label>
+      <ion-label color="medium" (click)="toggleLoginMode()" translate="Sign In By Username"></ion-label>
     </div>
   </div>
 </ng-template>
