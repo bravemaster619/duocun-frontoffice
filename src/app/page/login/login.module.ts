@@ -9,6 +9,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 import { FormUsernameComponent } from './form-username/form-username.component';
 import { FormPhoneComponent } from './form-phone/form-phone.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { FormPhoneComponent } from './form-phone/form-phone.component';
     IonicModule,
     LoginPageRoutingModule,
     TranslateModule.forChild(),
+    RouterModule.forChild([])
   ],
   exports: [
     FormPhoneComponent,
@@ -25,7 +27,7 @@ import { FormPhoneComponent } from './form-phone/form-phone.component';
   declarations: [
     LoginPage,
     FormPhoneComponent,
-    FormUsernameComponent
+    FormUsernameComponent,
   ]
 })
 export class LoginPageModule {}

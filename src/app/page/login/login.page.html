@@ -19,6 +19,9 @@
       <ion-label color="medium" (click)="toggleLoginMode()" translate="Sign In By Phone"></ion-label>
     </div>
   </div>
+  <div class="ion-padding-horizontal ion-text-center ion-margin-top">
+    <ion-label color="medium" [routerLink]="['/register']" routerLinkActive="router-link-active" translate="Sign Up"></ion-label>
+  </div>
 </ion-content>
 
 <ng-template #loginByPhoneImage>
