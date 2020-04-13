@@ -4,6 +4,8 @@ import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-transla
 import { HomePage } from './home.page';
 import { createTranslateLoader } from '../../app.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SideMenuComponent } from 'src/app/side-menu/side-menu.component';
+import { RouterModule } from '@angular/router';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -11,7 +13,10 @@ describe('HomePage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePage ],
+      declarations: [ 
+        HomePage,
+        SideMenuComponent
+      ],
       imports: [
         HttpClientModule,
         IonicModule.forRoot(),
@@ -22,6 +27,7 @@ describe('HomePage', () => {
             deps: [HttpClient]
           }
         }),
+        RouterModule.forRoot([])
       ]
     }).compileComponents();
 

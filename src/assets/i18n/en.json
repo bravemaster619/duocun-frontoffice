@@ -4,7 +4,7 @@
     "title.signin": "Sign In|Duocun",
     "title.signup": "Sign Up|Duocun",
     "description.home": "Duocun Homepage",
-    
+
     "Hello": "Hello in English",
     "Sign In": "Sign In",
     "Username": "Username",
@@ -18,5 +18,6 @@
     "Verification Code": "Verification Code",
     "Password Confirmation": "Password Confirmation",
     "Home": "Home",
-    "Duocun": "Duocun"
+    "Duocun": "Duocun",
+    "Menu": "Menu"
 }
