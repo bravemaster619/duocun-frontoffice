@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { SideMenuComponent } from 'src/app/side-menu/side-menu.component';
+import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
 
 @NgModule({
   imports: [
