@@ -1,18 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title translate="Duocun"></ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" id="main-content">
-  <div id="container">
-    <strong>{{ 'Hello' | translate }}</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
 <app-side-menu></app-side-menu>
-<app-bottom-navs></app-bottom-navs>
+<ion-tabs id="main-content">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="browse">
+      <ion-icon name="home-outline"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="cart">
+      <ion-icon name="cart-outline"></ion-icon>
+      <ion-label translate="Cart"></ion-label>
+      <ion-badge>5</ion-badge>
+    </ion-tab-button>
+    <ion-tab-button tab="my-account">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label translate="My Account"></ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
-import { HomePage } from './home.page';
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
+
+import { CartPageRoutingModule } from './cart-routing.module';
+
+import { CartPage } from './cart.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
 
@@ -13,12 +15,12 @@ import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule, 
+    CartPageRoutingModule,
     TranslateModule.forChild(),
     SideMenuModule
   ],
   declarations: [
-    HomePage,
+    CartPage
   ]
 })
-export class HomePageModule {}
+export class CartPageModule {}

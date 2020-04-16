@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
-import { HomePage } from './home.page';
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
+
+import { BrowsePageRoutingModule } from './browse-routing.module';
+
+import { BrowsePage } from './browse.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule, 
+    BrowsePageRoutingModule,
     TranslateModule.forChild(),
-    SideMenuModule
   ],
   declarations: [
-    HomePage,
+    BrowsePage,
   ]
 })
-export class HomePageModule {}
+export class BrowsePageModule {}
