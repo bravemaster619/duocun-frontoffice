@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { IonicStorageModule } from '@ionic/storage';
-import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { AuthenticationService } from './authentication.service';
 import * as Config from 'src/assets/config.json';
