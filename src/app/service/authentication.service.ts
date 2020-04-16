@@ -45,4 +45,14 @@ export class AuthenticationService {
     return this.authenticationState.value
   }
 
+  async getToken() {
+    return new Promise(resolve => {
+      this.storage.get(AUTH_TOKEN_KEY).then((token) => {
+        resolve(token);
+      }).catch(() => {
+        resolve("");
+      })
+    });
+  }
+
 }
