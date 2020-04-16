@@ -6,6 +6,7 @@ import { createTranslateLoader } from '../../app.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
+import { BottomNavsComponent } from 'src/app/components/bottom-navs/bottom-navs.component';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -15,7 +16,8 @@ describe('HomePage', () => {
     TestBed.configureTestingModule({
       declarations: [ 
         HomePage,
-        SideMenuComponent
+        SideMenuComponent,
+        BottomNavsComponent
       ],
       imports: [
         HttpClientModule,

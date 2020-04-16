@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { HomePage } from './home.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
+import { BottomNavsComponent } from 'src/app/components/bottom-navs/bottom-navs.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.compon
   ],
   declarations: [
     HomePage,
-    SideMenuComponent
+    SideMenuComponent,
+    BottomNavsComponent
   ]
 })
 export class HomePageModule {}
