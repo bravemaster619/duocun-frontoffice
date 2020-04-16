@@ -1,4 +1,10 @@
 {
+    
+    "title.home": "Home|Duocun",
+    "title.signin": "Sign In|Duocun",
+    "title.signup": "Sign Up|Duocun",
+    "description.home": "Duocun Homepage",
+
     "Hello": "Hello in English",
     "Sign In": "Sign In",
     "Username": "Username",
@@ -10,5 +16,10 @@
     "Resend OTP Code": "Resend OTP Code",
     "Sign Up": "Sign Up",
     "Verification Code": "Verification Code",
-    "Password Confirmation": "Password Confirmation"
+    "Password Confirmation": "Password Confirmation",
+    "Home": "Home",
+    "Duocun": "Duocun",
+    "Menu": "Menu",
+    "Cart": "Cart",
+    "My Account": "My Account"
 }
