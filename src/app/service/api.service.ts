@@ -4,6 +4,7 @@ import * as queryString from "query-string";
 import { AuthenticationService } from "src/app/service/authentication.service";
 import * as Config from 'src/assets/config.json';
 
+// @ts-ignore
 const config = process.env.NODE_ENV === "production"
   ? Config.production
   : Config.development;
