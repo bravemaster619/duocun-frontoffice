@@ -19,6 +19,13 @@ export class BrowsePage implements OnInit {
 
   ngOnInit() {
     this.loading = true;
+    this.apiService.v2().get("products/featured").then(observer => {
+      observer.subscribe(data => {
+        //@ts-ignore
+        this.featuredProducts = data;
+        this.loading = false;
+      });
+    });
   }
 
 }
