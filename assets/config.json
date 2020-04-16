@@ -1,0 +1,10 @@
+{
+  "development": {
+    "API_URL": "http://localhost:8000/api",
+    "API_V2_URL": "http://localhost:8000/api/v2"
+  },
+  "production": {
+    "API_URL": "http://localhost:8000/api",
+    "API_V2_URL": "http://localhost:8000/api/v2"
+  }
+}
