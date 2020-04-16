@@ -8,6 +8,7 @@ import { BrowsePageRoutingModule } from './browse-routing.module';
 
 import { BrowsePage } from './browse.page';
 import { TranslateModule } from '@ngx-translate/core';
+import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
     IonicModule,
     BrowsePageRoutingModule,
     TranslateModule.forChild(),
+    IonImageModule
   ],
   declarations: [
     BrowsePage,
