@@ -3,12 +3,14 @@ import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { SideMenuComponent } from './side-menu.component';
 import { RouterModule } from '@angular/router';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   imports: [
     RouterModule,
     IonicModule,
-    TranslateModule.forChild()
+    TranslateModule,
+    IonicStorageModule
   ],
   declarations: [ SideMenuComponent ],
   exports: [ SideMenuComponent ]

@@ -3,6 +3,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { SideMenuComponent } from './side-menu.component';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
+import { IonicStorageModule } from '@ionic/storage';
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
@@ -13,7 +15,9 @@ describe('SideMenuComponent', () => {
       declarations: [ SideMenuComponent ],
       imports: [
         IonicModule.forRoot(),
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        TranslateModule.forRoot(),
+        IonicStorageModule.forRoot()
       ]
     }).compileComponents();
 
