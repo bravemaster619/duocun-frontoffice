@@ -8,6 +8,12 @@ const routes: Routes = [{
   children: [{
     path: 'browse',
     children: [{
+      path: 'product',
+      children: [{
+        path: ':id',
+        loadChildren: 'src/app/page/product/product.module#ProductPageModule'
+      }]
+    }, {
       path: '',
       loadChildren: 'src/app/page/browse/browse.module#BrowsePageModule'
     }]

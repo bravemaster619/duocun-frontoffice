@@ -30,6 +30,7 @@ export class AppComponent {
         if (lang === "en" || lang === "zh") {
           this.translator.use(lang);
         } else {
+          //@ts-ignore
           this.translator.use(process.env.NODE_ENV === "production" ? Config.production.DEFAULT_LANG : Config.development.DEFAULT_LANG);
         }
       });

@@ -1,0 +1,51 @@
+<ng-container *ngIf="!loading; Else skeleton">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">{{product.name}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="product-page">
+    <div class="image-slide-container">
+      <ion-slides>
+        <ion-slide *ngFor="let image of product.pictures">
+          <app-ion-image [src]="image.url" [alt]="product.name"></app-ion-image>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="product-detail ion-padding">
+      <div><ion-label>{{product.name}}</ion-label></div>
+      <div><ion-label>{{product.description}}</ion-label></div>
+    </div>
+  </ion-content>
+</ng-container>
+
+<ng-template #skeleton>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center"></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="product-page">
+    <div class="image-slide-container">
+      <ion-slides>
+        <ion-slide>
+          <ion-img src="assets/img/no-image.png"></ion-img>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="product-detail ion-padding">
+      <div><ion-skeleton-text animated style="height: 1.5rem;" class="ion-margin-bottom"></ion-skeleton-text></div>
+      <div><ion-skeleton-text animated style="width: 80%; height: 1.2rem;"></ion-skeleton-text></div>
+      <div><ion-skeleton-text animated style="width: 50%; height: 1.2rem;"></ion-skeleton-text></div>
+      <div><ion-skeleton-text animated style="width: 50%; height: 1.2rem;"></ion-skeleton-text></div>
+    </div>
+  </ion-content>
+</ng-template>

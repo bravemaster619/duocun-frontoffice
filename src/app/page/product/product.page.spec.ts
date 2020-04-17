@@ -1,31 +1,31 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { BrowsePage } from './browse.page';
+import { ProductPage } from './product.page';
 import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
+import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
-import { RouterModule } from '@angular/router';
 
-describe('BrowsePage', () => {
-  let component: BrowsePage;
-  let fixture: ComponentFixture<BrowsePage>;
+describe('ProductPage', () => {
+  let component: ProductPage;
+  let fixture: ComponentFixture<ProductPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
-        BrowsePage,
-      ],
+      declarations: [ ProductPage ],
       imports: [
         IonicModule.forRoot(),
         IonImageModule,
+        RouterModule.forRoot([]),
+        TranslateModule.forRoot(),
         HttpClientModule,
-        IonicStorageModule.forRoot(),
-        RouterModule.forRoot([])
+        IonicStorageModule.forRoot()
       ]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BrowsePage);
+    fixture = TestBed.createComponent(ProductPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
