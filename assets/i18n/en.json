@@ -1,5 +1,4 @@
 {
-    
     "title.home": "Home|Duocun",
     "title.signin": "Sign In|Duocun",
     "title.signup": "Sign Up|Duocun",
@@ -21,5 +20,6 @@
     "Duocun": "Duocun",
     "Menu": "Menu",
     "Cart": "Cart",
-    "My Account": "My Account"
+    "My Account": "My Account",
+    "Language": "Language"
 }
