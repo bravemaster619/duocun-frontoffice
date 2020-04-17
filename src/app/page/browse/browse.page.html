@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>browse</ion-title>
+    <ion-title class="ion-text-center"></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
   <ion-grid>
     <ion-row>
       <ng-container *ngIf="!loading; Else skeleton">
-        <ion-row *ngIf="featuredProducts.length; Else dataEmpty">
+        <ion-row *ngIf="featuredProducts.length; Else dataEmpty" class="w-100">
           <ion-col size="6" *ngFor="let product of featuredProducts">
             <ion-card class="ion-no-margin">
               <ion-card-content>
@@ -22,7 +22,6 @@
                   ></app-ion-image>
                 </div>
                 <div><ion-label>{{product.name}}</ion-label></div>
-                <div><ion-label>{{product.description}}</ion-label></div>
                 <div><ion-label>{{product.price}}</ion-label></div>
               </ion-card-content>
             </ion-card>

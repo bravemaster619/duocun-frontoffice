@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    TranslateModule.forChild(),
+    TranslateModule,
     RouterModule.forChild([])
   ],
   exports: [

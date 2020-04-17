@@ -16,7 +16,7 @@ import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
     FormsModule,
     IonicModule,
     CartPageRoutingModule,
-    TranslateModule.forChild(),
+    TranslateModule,
     SideMenuModule
   ],
   declarations: [

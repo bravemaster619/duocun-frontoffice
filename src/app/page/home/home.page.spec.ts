@@ -6,6 +6,7 @@ import { createTranslateLoader } from '../../app.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
+import { IonicStorageModule } from '@ionic/storage';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -27,7 +28,8 @@ describe('HomePage', () => {
             deps: [HttpClient]
           }
         }),
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        IonicStorageModule.forRoot()
       ]
     }).compileComponents();
 

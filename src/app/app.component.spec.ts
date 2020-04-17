@@ -33,6 +33,7 @@ describe('AppComponent', () => {
             deps: [HttpClient]
           }
         }),
+        IonicStorageModule.forRoot()
       ],
       providers: [
         { provide: StatusBar, useValue: statusBarSpy },

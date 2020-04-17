@@ -9,19 +9,19 @@ const routes: Routes = [{
     path: 'browse',
     children: [{
       path: '',
-      loadChildren: '../browse/browse.module#BrowsePageModule'
+      loadChildren: 'src/app/page/browse/browse.module#BrowsePageModule'
     }]
   }, {
     path: 'cart',
     children: [{
       path: '',
-      loadChildren: '../cart/cart.module#CartPageModule'
+      loadChildren: 'src/app/page/cart/cart.module#CartPageModule'
     }]
   }, {
     path: 'my-account',
     children: [{
       path: '',
-      loadChildren: '../my-account/my-account.module#MyAccountPageModule'
+      loadChildren: 'src/app/page/my-account/my-account.module#MyAccountPageModule'
     }]
   }, {
     path: '',
