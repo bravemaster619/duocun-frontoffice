@@ -6,6 +6,7 @@ import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { RouterModule } from '@angular/router';
+import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
 
 describe('BrowsePage', () => {
   let component: BrowsePage;
@@ -21,7 +22,8 @@ describe('BrowsePage', () => {
         IonImageModule,
         HttpClientModule,
         IonicStorageModule.forRoot(),
-        RouterModule.forRoot([])
+        RouterModule.forRoot([]),
+        LocalValueDirectiveModule
       ]
     }).compileComponents();
 

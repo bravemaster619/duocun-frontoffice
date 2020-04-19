@@ -7,6 +7,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
 import { IonicStorageModule } from '@ionic/storage';
+import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -29,7 +30,8 @@ describe('HomePage', () => {
           }
         }),
         RouterModule.forRoot([]),
-        IonicStorageModule.forRoot()
+        IonicStorageModule.forRoot(),
+        LocalValueDirectiveModule
       ]
     }).compileComponents();
 

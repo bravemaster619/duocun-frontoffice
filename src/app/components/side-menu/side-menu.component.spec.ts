@@ -5,6 +5,8 @@ import { SideMenuComponent } from './side-menu.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonicStorageModule } from '@ionic/storage';
+import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
@@ -17,7 +19,9 @@ describe('SideMenuComponent', () => {
         IonicModule.forRoot(),
         RouterModule.forRoot([]),
         TranslateModule.forRoot(),
-        IonicStorageModule.forRoot()
+        IonicStorageModule.forRoot(),
+        LocalValueDirectiveModule,
+        HttpClientModule
       ]
     }).compileComponents();
 

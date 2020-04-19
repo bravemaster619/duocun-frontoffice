@@ -21,7 +21,7 @@
                     [alt]="product.name"
                   ></app-ion-image>
                 </div>
-                <div><ion-label>{{product.name}}</ion-label></div>
+                <div><ion-label localValue [data]="product" [key]="'name'"></ion-label></div>
                 <div><ion-label>{{product.price}}</ion-label></div>
               </ion-card-content>
             </ion-card>
