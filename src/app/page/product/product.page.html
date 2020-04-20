@@ -45,12 +45,46 @@
     </ion-list>
     <!--  END SELECT ATTRIBUTES  -->
 
-    <!-- BEGIN QUANTITY INPUT -->
-    
-    <!--  END  QUANTITY INPUT -->
+    <ion-row class="purchase-row">
+      <!-- BEGIN QUANTITY TOUCHSPIN -->
+      <ion-col size-sm="12" size-md="4" >
+        <ion-row class="touchspin-row ion-padding">
+          <ion-label translate="Quantity"></ion-label>
+          <div class="touchspin-container">
+            <ion-touchspin size="md" [initialValue]="1" (valueChange)="handleQuantityChange($event)">
+            </ion-touchspin>
+          </div>
+        </ion-row>
+        <ion-row class="subtotal-row ion-padding">
+          <ion-label>
+            <span translate="Price"></span>
+            <span>{{product|price}}</span>
+          </ion-label>
+        </ion-row>
+      <!--  END  QUANTITY TOUCHSPIN -->
+      </ion-col>
+      <!-- BEGIN PURCHASE BUTTONS -->
+      <ion-col size-sm="12" size-md="8" >
+        <ion-row class="purchase-buttons-row ion-padding">
+          <ion-col>
+            <ion-button size="medium" expand="full">
+              <ion-icon slot="start" name="cart-outline"></ion-icon>
+              {{"Add to Cart"|translate}}
+            </ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button translate="Buy Now" color="danger" size="medium" expand="full">
+              <ion-icon slot="start" name="basket-outline"></ion-icon>
+              {{"Buy Now"|translate}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <!--  END PURCHASE BUTTONS  -->
+    </ion-row>
 
     <!-- BEGIN SOCIAL MEDIA SHARE BUTTONS -->
-    <ion-row class="share-buttons-row ion-padding">
+    <ion-row class="share-buttons-row ion-padding ion-justify-content-end">
       <ion-label translate="Share" class="ion-margin-end"></ion-label>
       <a class="share-button" [href]="'https://www.facebook.com/sharer.php?u=' + href" target="_blank">
         <ion-icon class="facebook" name="logo-facebook"></ion-icon>

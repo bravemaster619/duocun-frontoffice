@@ -8,6 +8,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
+import { TouchspinModule } from 'src/app/component/touchspin/touchspin.module';
+import { PricePipeModule } from 'src/app/pipe/price.module';
 
 describe('ProductPage', () => {
   let component: ProductPage;
@@ -23,7 +25,9 @@ describe('ProductPage', () => {
         TranslateModule.forRoot(),
         HttpClientModule,
         IonicStorageModule.forRoot(),
-        LocalValueDirectiveModule
+        LocalValueDirectiveModule,
+        TouchspinModule,
+        PricePipeModule
       ]
     }).compileComponents();
 

@@ -4,6 +4,21 @@
     height: 300px;
   }
 }
+.purchase-row > ion-col:first-child {
+  display: flex;
+  align-items: center;
+}
+.subtotal-row {
+  ion-label {
+    line-height: 2rem;
+  }
+  ion-label > span:first-child {
+    margin-right: 1rem;
+  }
+  ion-label > span:last-child {
+    font-size: 1.25rem;
+  }
+}
 .share-buttons-row {
   ion-label {
     line-height: calc(1.75rem + 4px);
@@ -26,4 +41,13 @@
     }
   }
   
+}
+.touchspin-row {
+  ion-label {
+    line-height: 2rem;
+    margin-right: 1rem;
+  }
+  .touchspin-container {
+    width: 96px;
+  }
 }
