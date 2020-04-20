@@ -2,6 +2,8 @@
     "title.home": "Home|Duocun",
     "title.signin": "Sign In|Duocun",
     "title.signup": "Sign Up|Duocun",
+    "title.category": "Category|Duocun",
+    "title.product": "Product|Duocun",
     "description.home": "Duocun Homepage",
 
     "Hello": "Hello in English",
@@ -23,5 +25,8 @@
     "My Account": "My Account",
     "Language": "Language",
     "Category": "Category",
-    "Share": "Share"
+    "Share": "Share",
+    "Quantity": "Qauntity",
+    "Add to Cart": "Add to Cart",
+    "Subtotal": "Subtotal"
 }

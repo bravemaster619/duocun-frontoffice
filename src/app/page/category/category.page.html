@@ -18,12 +18,12 @@
                 <app-ion-image
                   [src]="(product.pictures && product.pictures.length) ? product.pictures[0].url : ''"
                   [alt]="product.name"
-                  style="height:128px; object-fit:cover;"
+                  style="height:180px; object-fit:cover;"
                 ></app-ion-image>
               </div>
               <ion-label>
                 <h3 localValue [data]="product" [key]="'name'"></h3>
-                <p>{{product.price}} $</p>
+                <p>{{product|price}}</p>
               </ion-label>
             </ion-card-content>
           </ion-card>

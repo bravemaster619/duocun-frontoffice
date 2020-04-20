@@ -10,6 +10,7 @@ import { BrowsePage } from './browse.page';
 import { TranslateModule } from '@ngx-translate/core';
 import { IonImageModule } from 'src/app/component/ion-image/ion-image.module';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
+import { PricePipeModule } from 'src/app/pipe/price.module';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module'
     BrowsePageRoutingModule,
     TranslateModule.forChild(),
     IonImageModule,
-    LocalValueDirectiveModule
+    LocalValueDirectiveModule,
+    PricePipeModule
   ],
   declarations: [
     BrowsePage
