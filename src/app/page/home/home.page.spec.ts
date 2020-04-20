@@ -4,7 +4,7 @@ import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-transla
 import { HomePage } from './home.page';
 import { createTranslateLoader } from '../../app.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SideMenuComponent } from 'src/app/components/side-menu/side-menu.component';
+import { SideMenuComponent } from 'src/app/component/side-menu/side-menu.component';
 import { RouterModule } from '@angular/router';
 import { IonicStorageModule } from '@ionic/storage';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';

@@ -8,7 +8,7 @@ import { BrowsePageRoutingModule } from './browse-routing.module';
 
 import { BrowsePage } from './browse.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
+import { IonImageModule } from 'src/app/component/ion-image/ion-image.module';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
 
 @NgModule({

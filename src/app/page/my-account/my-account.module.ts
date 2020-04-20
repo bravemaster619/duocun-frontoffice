@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { MyAccountPageRoutingModule } from './my-account-routing.module';
 
 import { MyAccountPage } from './my-account.page';
-import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
+import { SideMenuModule } from 'src/app/component/side-menu/side-menu.module';
 
 @NgModule({
   imports: [

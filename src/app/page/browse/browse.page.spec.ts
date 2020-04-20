@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { BrowsePage } from './browse.page';
-import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
+import { IonImageModule } from 'src/app/component/ion-image/ion-image.module';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { RouterModule } from '@angular/router';

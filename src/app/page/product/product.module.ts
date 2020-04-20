@@ -7,8 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { ProductPageRoutingModule } from './product-routing.module';
 
 import { ProductPage } from './product.page';
-import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
+import { IonImageModule } from 'src/app/component/ion-image/ion-image.module';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module'
     IonicModule,
     ProductPageRoutingModule,
     IonImageModule,
-    LocalValueDirectiveModule
+    LocalValueDirectiveModule,
+    TranslateModule
   ],
   declarations: [ProductPage]
 })

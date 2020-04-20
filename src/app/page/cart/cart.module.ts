@@ -8,7 +8,7 @@ import { CartPageRoutingModule } from './cart-routing.module';
 
 import { CartPage } from './cart.page';
 import { TranslateModule } from '@ngx-translate/core';
-import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
+import { SideMenuModule } from 'src/app/component/side-menu/side-menu.module';
 
 @NgModule({
   imports: [

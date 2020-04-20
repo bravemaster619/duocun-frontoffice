@@ -8,7 +8,7 @@ import { CategoryPageRoutingModule } from './category-routing.module';
 
 import { CategoryPage } from './category.page';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
-import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
+import { IonImageModule } from 'src/app/component/ion-image/ion-image.module';
 
 @NgModule({
   imports: [

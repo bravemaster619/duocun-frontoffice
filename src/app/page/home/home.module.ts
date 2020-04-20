@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { SideMenuModule } from 'src/app/components/side-menu/side-menu.module';
+import { SideMenuModule } from 'src/app/component/side-menu/side-menu.module';
 
 @NgModule({
   imports: [
