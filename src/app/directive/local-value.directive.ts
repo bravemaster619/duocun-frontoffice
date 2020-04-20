@@ -1,5 +1,6 @@
 import { Directive, Input, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+
 @Directive({
   selector: '[localValue]'
 })
@@ -7,18 +8,26 @@ export class LocalValueDirective {
 
   @Input() data: object;
   @Input() key: string;
-
-  value: string;
+  @Input() fallback: string;
 
   constructor(
     private translator: TranslateService,
     private el: ElementRef
   ) {}
   
-  ngOnInit() {
-    let value = "";
+  ngOnChanges() {
     this.translator.onLangChange.subscribe((event) => {
-      switch(event.lang) {
+      let text = this.getValueFromData(this.data, this.key, event.lang);
+      this.setText(text);
+    });
+    let text = this.getValueFromData(this.data, this.key, this.translator.currentLang);
+    this.setText(text);
+  }
+
+  getValueFromData(data, key, lang) {
+    let value = "";
+    try {
+      switch (lang) {
         case "zh": {
           value = this.data[this.key];
           break;
@@ -33,25 +42,22 @@ export class LocalValueDirective {
           value = this.data[this.key];
           break;
       }
-      this.el.nativeElement.innerText = value;
-    })
-    
-    switch (this.translator.currentLang) {
-      case "zh": {
-        value = this.data[this.key];
-        break;
+    } catch (e) {
+      if (this.fallback) {
+        this.translator.get(this.fallback).subscribe(v => {
+          value = v;
+        });
       }
-      case "en": {
-        if (this.data[this.key + "EN"]) {
-          value = this.data[this.key + "EN"];
-          break;
-        }
+      //@ts-ignore
+      if (process.env.NODE_ENV !== "production") {
+        console.warn(e);
       }
-      default: 
-        value = this.data[this.key];
-        break;
     }
-    this.el.nativeElement.innerText = value;
+    return value;
+  }
+
+  setText(text) {
+    this.el.nativeElement.innerText = text;
   }
 
 }
