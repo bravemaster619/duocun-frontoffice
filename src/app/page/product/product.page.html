@@ -10,18 +10,27 @@
   
   <ion-content class="product-page">
     <div class="image-slide-container">
-      <ion-slides>
+      <ion-slides *ngIf="product.pictures && product.pictures.length; Else slidePlaceholder">
         <ion-slide *ngFor="let image of product.pictures">
           <app-ion-image [src]="image.url" [alt]="product.name"></app-ion-image>
         </ion-slide>
       </ion-slides>
     </div>
     <div class="product-detail ion-padding">
-      <div><ion-label>{{product.name}}</ion-label></div>
-      <div><ion-label>{{product.description}}</ion-label></div>
+      <h3 localValue [data]="product" [key]="'name'"></h3>
+      <p localValue [data]="product" [key]="'description'"></p>
     </div>
   </ion-content>
 </ng-container>
+
+<ng-template #slidePlaceholder>
+  <ion-slides>
+    <ion-slide>
+      <ion-img src="assets/img/no-image.png" [alt]="product.name">
+      </ion-img>
+    </ion-slide>
+  </ion-slides>
+</ng-template>
 
 <ng-template #skeleton>
   <ion-header>
