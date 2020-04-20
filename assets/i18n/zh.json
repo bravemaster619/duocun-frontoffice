@@ -2,6 +2,8 @@
     "title.home": "多村",
     "title.signin": "登录|多村",
     "title.signup": "注册|多村",
+    "title.category": "分类|多村",
+    "title.product": "商品|多村",
     "description.home": "多村",
 
     "Hello": "Hello in English",
@@ -22,5 +24,10 @@
     "Cart": "购物车",
     "My Account": "My Account",
     "Language": "语言",
-    "Category": "Category"
+    "Category": "Category",
+    "Share": "分享",
+    "Quantity": "数量",
+    "Add to Cart": "加入购物车",
+    "Subtotal": "Subtotal",
+    "Price": "价格"
 }
