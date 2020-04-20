@@ -4,3 +4,26 @@
     height: 300px;
   }
 }
+.share-buttons-row {
+  ion-label {
+    line-height: calc(1.75rem + 4px);
+  }
+  .share-button {
+    ion-icon {
+      font-size: 1.75rem;
+      margin-right: 1rem;
+      padding: 2px;
+      border: 1px solid #eee;
+    }
+    ion-icon.facebook {
+      color: #3b5998;
+    }
+    ion-icon.twitter {
+      color: #00acee
+    }
+    ion-icon.pinterest {
+      color: #c8232c;
+    }
+  }
+  
+}

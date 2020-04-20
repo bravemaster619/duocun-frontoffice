@@ -4,11 +4,13 @@
       <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-      <ion-title class="ion-text-center">{{product.name}}</ion-title>
+      <ion-title class="ion-text-center" localValue [data]="product" [key]="'name'" [fallback]="'Product'"></ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content class="product-page">
+
+    <!-- BEGIN PRODUCT IMAGE SLIDER -->
     <div class="image-slide-container">
       <ion-slides *ngIf="product.pictures && product.pictures.length; Else slidePlaceholder">
         <ion-slide *ngFor="let image of product.pictures">
@@ -16,10 +18,51 @@
         </ion-slide>
       </ion-slides>
     </div>
+    <!--  END PRODUCT IMAGE SLIDER  -->
+
+    <!-- BEGIN TITLE AND DESCRIPTION -->
     <div class="product-detail ion-padding">
       <h3 localValue [data]="product" [key]="'name'"></h3>
       <p localValue [data]="product" [key]="'description'"></p>
     </div>
+    <!--  END TITLE AND DESCRIPTION  -->
+
+    <!-- BEGIN SELECT ATTRIBUTES -->
+    <ion-list *ngIf="product.attributes && product.attributes.length">
+      <ion-item *ngFor="let attribute of product.attributes; index as attrIdx;">
+        <ion-label localValue [data]="attribute" [key]="'name'"></ion-label>
+        <ion-select>
+          <ion-select-option 
+            *ngFor="let val of attribute.values; index as valIdx;" 
+            value="valIdx"
+            localValue
+            [data]="val"
+            [key]="'name'"
+          >
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <!--  END SELECT ATTRIBUTES  -->
+
+    <!-- BEGIN QUANTITY INPUT -->
+    
+    <!--  END  QUANTITY INPUT -->
+
+    <!-- BEGIN SOCIAL MEDIA SHARE BUTTONS -->
+    <ion-row class="share-buttons-row ion-padding">
+      <ion-label translate="Share" class="ion-margin-end"></ion-label>
+      <a class="share-button" [href]="'https://www.facebook.com/sharer.php?u=' + href" target="_blank">
+        <ion-icon class="facebook" name="logo-facebook"></ion-icon>
+      </a>
+      <a class="share-button" [href]="'https://twitter.com/intent/tweet?text=' + product.name + ' ' + href" target="_blank">
+        <ion-icon class="twitter" name="logo-twitter"></ion-icon>
+      </a>
+      <a class="share-button" [href]="'https://www.pinterest.com/pin/create/button?media=' + href" target="_blank">
+        <ion-icon class="pinterest" name="logo-pinterest"></ion-icon>
+      </a>
+    </ion-row>
+    <!--  END SOCIAL MEDIA SHARE BUTTONS  -->
   </ion-content>
 </ng-container>
 
