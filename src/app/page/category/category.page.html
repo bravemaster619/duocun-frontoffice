@@ -18,6 +18,7 @@
                 <app-ion-image
                   [src]="(product.pictures && product.pictures.length) ? product.pictures[0].url : ''"
                   [alt]="product.name"
+                  style="height:128px; object-fit:cover;"
                 ></app-ion-image>
               </div>
               <ion-label>
@@ -44,6 +45,7 @@
         <app-ion-image
           [src]="(product.pictures && product.pictures.length) ? product.pictures[0].url : ''"
           [alt]="product.name"
+          style="height:100%; object-fit:cover;"
         ></app-ion-image>
       </ion-thumbnail>
       <ion-label>

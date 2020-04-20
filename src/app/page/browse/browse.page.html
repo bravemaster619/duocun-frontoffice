@@ -13,12 +13,13 @@
       <ng-container *ngIf="!loading; Else skeleton">
         <ion-row *ngIf="featuredProducts.length; Else dataEmpty" class="w-100">
           <ion-col size="6" *ngFor="let product of featuredProducts">
-            <ion-card class="ion-no-margin" [routerLink]="['product/' + product._id]">
+            <ion-card class="ion-no-margin" [routerLink]="['product', product._id]">
               <ion-card-content>
                 <div class="featured-product-image-container ion-margin-bottom">
                   <app-ion-image
                     [src]="(product.pictures && product.pictures.length) ? product.pictures[0].url : ''"
                     [alt]="product.name"
+                    style="height:128px; object-fit:cover;"
                   ></app-ion-image>
                 </div>
                 <div><ion-label localValue [data]="product" [key]="'name'"></ion-label></div>

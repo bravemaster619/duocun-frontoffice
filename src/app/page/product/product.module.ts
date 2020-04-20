@@ -8,6 +8,7 @@ import { ProductPageRoutingModule } from './product-routing.module';
 
 import { ProductPage } from './product.page';
 import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
+import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { IonImageModule } from 'src/app/components/ion-image/ion-image.module';
     FormsModule,
     IonicModule,
     ProductPageRoutingModule,
-    IonImageModule
+    IonImageModule,
+    LocalValueDirectiveModule
   ],
   declarations: [ProductPage]
 })
