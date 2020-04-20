@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
+import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
 
 describe('ProductPage', () => {
   let component: ProductPage;
@@ -21,7 +22,8 @@ describe('ProductPage', () => {
         RouterModule.forRoot([]),
         TranslateModule.forRoot(),
         HttpClientModule,
-        IonicStorageModule.forRoot()
+        IonicStorageModule.forRoot(),
+        LocalValueDirectiveModule
       ]
     }).compileComponents();
 
