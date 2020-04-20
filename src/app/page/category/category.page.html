@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center" localValue [data]="category" [key]="'name'" [fallback]="'Category'"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="!loading; Else skeleton">
+    <ng-container *ngIf="products.length < 7 ; Else thumbnailMode">
+      <ion-row>
+        <ion-col *ngFor="let product of products" size="6">
+          <ion-card class="ion-no-margin" [routerLink]="['/tabs/browse/product/', product._id]">
+            <ion-card-content>
+              <div class="featured-product-image-container ion-margin-bottom">
+                <app-ion-image
+                  [src]="(product.pictures && product.pictures.length) ? product.pictures[0].url : ''"
+                  [alt]="product.name"
+                ></app-ion-image>
+              </div>
+              <ion-label>
+                <h3 localValue [data]="product" [key]="'name'"></h3>
+                <p>{{product.price}} $</p>
+              </ion-label>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+    <ion-list>
+      <ion-item *ngFor="let category of subCategories" [routerLink]="['/tabs/browse/category/', category._id]">
+        <h4 localValue [data]="category" [key]="'name'"></h4>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+</ion-content>
+
+<ng-template #thumbnailMode>
+  <ion-list lines="none">
+    <ion-item *ngFor="let product of products" [routerLink]="['/tabs/browse/product/', product._id]">
+      <ion-thumbnail slot="start">
+        <app-ion-image
+          [src]="(product.pictures && product.pictures.length) ? product.pictures[0].url : ''"
+          [alt]="product.name"
+        ></app-ion-image>
+      </ion-thumbnail>
+      <ion-label>
+        <h3 localValue [data]="product" [key]="'name'"></h3>
+        <p>{{product.price}} $</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ng-template>
+
+<ng-template #skeleton>
+  <ion-row *ngFor="let idx of [1,2]">
+    <ion-col size="6">
+      <ion-card class="ion-no-margin">
+        <ion-card-content>
+          <div class="featured-product-image-container ion-margin-bottom">
+            <ion-img
+              src="assets/img/no-image.png"
+              alt="awesome product"
+            ></ion-img>
+          </div>
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-skeleton-text animated style="width:80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width:60%"></ion-skeleton-text>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6">
+      <ion-card class="ion-no-margin">
+        <ion-card-content>
+          <div class="featured-product-image-container ion-margin-bottom">
+            <ion-img
+              src="assets/img/no-image.png"
+              alt="awesome product"
+            ></ion-img>
+          </div>
+          <ion-skeleton-text animated></ion-skeleton-text>
+          <ion-skeleton-text animated style="width:80%"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width:60%"></ion-skeleton-text>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngFor="let idx of [1,2,3]">
+    <ion-col size="12">
+      <ion-skeleton-text animated style="height: 32px"></ion-skeleton-text>
+    </ion-col>
+  </ion-row>
+</ng-template>
