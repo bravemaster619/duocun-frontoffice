@@ -53,6 +53,9 @@ export class LocalValueDirective {
         console.warn(e);
       }
     }
+    if (!value) {
+      value = this.fallback || "";
+    }
     return value;
   }
 
