@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../authentication/authentication.service';
 import * as Config from 'src/assets/config.json';
 
 const config = process.env.NODE_ENV === "production"

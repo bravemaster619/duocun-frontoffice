@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as queryString from "query-string";
-import { AuthenticationService } from "src/app/service/authentication.service";
+import { AuthenticationService } from "src/app/service/authentication/authentication.service";
 import * as Config from 'src/assets/config.json';
 
 // @ts-ignore
