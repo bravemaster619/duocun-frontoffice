@@ -3,10 +3,55 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>cart</ion-title>
+    <ion-title translate="Cart"></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  Cart Page
+  <ion-list lines="none">
+    <ng-container *ngIf="cart.items.length > 0; Else emptyCart">
+      <ion-item *ngFor="let item of cart.items; index as itemIdx" class="ion-margin-top ion-margin-bottom">
+        <ion-thumbnail slot="start">
+          <app-ion-image
+          [src]="(item.product.pictures && item.product.pictures.length) ? item.product.pictures[0].url : ''"
+          [alt]="item.product.name"
+          style="height:100%; object-fit:cover;"
+        ></app-ion-image>
+        </ion-thumbnail>
+        <ion-label>
+          <h3 localValue [data]="item.product" [key]="'name'"></h3>
+          <p>{{cartItemSubtotal(item)|price}}</p>
+        </ion-label>
+        <ion-touchspin 
+          slot="end" 
+          style="width: 72px;" 
+          size="sm" 
+          [initialValue]="item.quantity" 
+          (valueChange)="handleQuantityChange(itemIdx, $event.value)"
+        >
+        </ion-touchspin>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+  <ion-row class="ion-padding" *ngIf="cart.items.length">
+    <ion-col size="6">
+      <ion-button expand="full" size="small" color="secondary" translate="Clear Cart" (click)="clearCart()">
+        <ion-icon name="trash-bin-outline" class="ion-margin-end"></ion-icon>
+        {{"Clear Cart"|translate}}
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="full" size="small" color="primary">
+        <ion-icon name="cash-outline" class="ion-margin-end"></ion-icon>
+        {{"Checkout"|translate}}
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
+
+<ng-template #emptyCart>
+  <ion-row class="ion-padding cart-empty">
+    <ion-col class="ion-text-center" translate="There are no items">
+    </ion-col>
+  </ion-row>
+</ng-template>
