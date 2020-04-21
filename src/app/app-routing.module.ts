@@ -23,19 +23,7 @@ const routes: Routes = [
   {
     path: 'not-found',
     loadChildren: () => import('./page/not-found/not-found.module').then( m => m.NotFoundPageModule)
-  },
-  // {
-  //   path: 'browse',
-  //   loadChildren: () => import('./page/browse/browse.module').then( m => m.BrowsePageModule)
-  // },
-  // {
-  //   path: 'cart',
-  //   loadChildren: () => import('./page/cart/cart.module').then( m => m.CartPageModule)
-  // },
-  // {
-  //   path: 'my-account',
-  //   loadChildren: () => import('./page/my-account/my-account.module').then( m => m.MyAccountPageModule)
-  // },
+  }
 ];
 
 @NgModule({
