@@ -11,7 +11,7 @@ import { CartInterface } from 'src/app/model/cart.model';
 })
 export class HomePage {
 
-  private cart: CartInterface;
+  cart: CartInterface;
 
   constructor(
     private title: Title,
