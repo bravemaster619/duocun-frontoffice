@@ -1,8 +1,8 @@
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api/api.service';
-import { ProductInterface } from 'src/app/model/Product';
-import { CategoryInterface } from 'src/app/model/Category';
+import { ProductInterface } from 'src/app/model/product.model';
+import { CategoryInterface } from 'src/app/model/category.model';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 

@@ -5,6 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
   pure: false
 })
 export class PricePipe implements PipeTransform {
+
+  formatter: any
+
+  constructor() {
+    this.formatter = new Intl.NumberFormat('en-US');
+  }
+
   transform(value: any, currency: string = '$'): string {
     if (typeof value === "object") {
       return this.transform(value.price, currency);
@@ -13,6 +20,6 @@ export class PricePipe implements PipeTransform {
     if (value < 0 || isNaN(value)) {
       value = 0;
     }
-    return `${value.toFixed(2)} ${currency}`;
+    return this.formatter.format(value) + ` ${currency}`;
   }
 }

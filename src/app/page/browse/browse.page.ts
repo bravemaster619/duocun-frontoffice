@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api/api.service';
-import { FeaturedProductInterface } from 'src/app/model/Product';
+import { FeaturedProductInterface } from 'src/app/model/product.model';
 
 @Component({
   selector: 'app-browse',

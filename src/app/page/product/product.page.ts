@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/service/api/api.service';
-import { ProductInterface, ProductAttributeInterface, ProductCombinationInterface, containEqualCombinationValues, ProductCombinationValueInterface, areEqualCombinationValues } from 'src/app/model/Product';
+import { ProductInterface, ProductAttributeInterface, ProductCombinationInterface, containEqualCombinationValues, ProductCombinationValueInterface, areEqualCombinationValues } from 'src/app/model/product.model';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-import { OrderableItemInterface } from 'src/app/model/OrderableItem';
+import { OrderableItemInterface } from 'src/app/model/orderable-item.model';
 import { CartService } from 'src/app/service/cart/cart.service';
-
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-product',
   templateUrl: './product.page.html',
@@ -24,7 +24,8 @@ export class ProductPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private translator: TranslateService,
     private title: Title,
-    private cartService: CartService
+    private cartService: CartService,
+    private alert: AlertController
   ) { }
 
   ngOnInit() {
@@ -70,13 +71,21 @@ export class ProductPage implements OnInit {
     if (combinationIdx === -1) {
       throw new Error("Combination not available");
     }
-    this.item.combinationIdx = combinationIdx;
-    this.item.price = this.product.combinations[this.item.combinationIdx].price;
-    this.item.attributeDescriptions = this.getAttributeDescriptions(this.product, this.item);
+    this.item = this.getItemFromCombinationIndex(this.product, this.item, combinationIdx);
   }
 
-  addToCart() {
+  async addToCart() {
     this.cartService.addItem(this.item);
+    const header = 'Notice';
+    const message = 'Product has been added to cart';
+    const button = 'OK';
+    this.translator.get([header, message, button]).subscribe((dict) => {
+      this.alert.create({
+        header: dict[header],
+        message: dict[message],
+        buttons: [dict[button]]
+      }).then(alert => alert.present());
+    });
   }
 
   buyNow() {
@@ -96,6 +105,7 @@ export class ProductPage implements OnInit {
 
   getDefaultItemFromProduct(product:ProductInterface): OrderableItemInterface {
     let item:any = {
+      product,
       productId: product._id,
       quantity: 1
     };
@@ -138,6 +148,26 @@ export class ProductPage implements OnInit {
     });
     return descriptions;
   }
+
+  getCombinationDescriptions(product: ProductInterface, item: OrderableItemInterface): void {
+    const descriptionArray = [];
+    const descriptionENArray = [];
+    const combinations = product.combinations[item.combinationIdx];
+    combinations.values.forEach(({ attrIdx, valIdx }) => {
+      const attribute = product.attributes.find(({ _id }) => _id === attrIdx);
+      if (attribute) {
+        descriptionArray.push(`${attribute.name}: ${attribute.values[valIdx].name}`);
+        if (attribute.nameEN) {
+          descriptionENArray.push(`${attribute.nameEN}: ${attribute.values[valIdx].nameEN}`);
+        } else {
+          descriptionENArray.push(`${attribute.name}: ${attribute.values[valIdx].name}`);
+        }
+      }
+    });
+    item.combinationDescription = descriptionArray.join(", ");
+    item.combinationDescriptionEN = descriptionENArray.join(", ");
+  }
+
   isAttributeEnabled(attribute: ProductAttributeInterface): boolean {
     return this.getAttributeSelectValue(attribute) !== -1;
   }

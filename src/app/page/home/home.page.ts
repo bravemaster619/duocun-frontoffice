@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { CartService } from 'src/app/service/cart/cart.service';
-import { CartInterface } from 'src/app/model/Cart';
+import { CartInterface } from 'src/app/model/cart.model';
 
 @Component({
   selector: 'app-home',
@@ -31,7 +31,6 @@ export class HomePage {
       });
     });
     this.cartService.getCart().subscribe(cart => {
-      console.log(cart);
       this.cart = cart;
     });
   }

@@ -8,7 +8,7 @@
     <ion-tab-button tab="cart">
       <ion-icon name="cart-outline"></ion-icon>
       <ion-label translate="Cart"></ion-label>
-      <ion-badge>
+      <ion-badge *ngIf="cart.items.length">
         {{cart|quantity}}
       </ion-badge>
     </ion-tab-button>

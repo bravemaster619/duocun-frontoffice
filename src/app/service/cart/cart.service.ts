@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Platform } from '@ionic/angular';
-import { CartInterface } from 'src/app/model/Cart';
+import { CartInterface } from 'src/app/model/cart.model';
 import * as Config from "src/assets/config.json";
-import { OrderableItemInterface, areEqualOrderableItems } from 'src/app/model/OrderableItem';
+import { OrderableItemInterface, areEqualOrderableItems } from 'src/app/model/orderable-item.model';
 import { Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -105,6 +105,12 @@ export class CartService {
     this.buyNowCart.items = [item];
     this.buyNowCart$.next(this.buyNowCart);
     return this.buyNowCart;
+  }
+
+  clearCart() {
+    this.cart.items = [];
+    this.cart$.next(this.cart);
+    this.saveCart();
   }
 
 }

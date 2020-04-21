@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import * as Config from "src/assets/config.json";
 import { ApiService } from 'src/app/service/api/api.service';
-import { MenuCategory } from "src/app/model/Category";
+import { MenuCategory } from "src/app/model/category.model";
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
