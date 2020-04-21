@@ -20,6 +20,7 @@
         </ion-thumbnail>
         <ion-label>
           <h3 localValue [data]="item.product" [key]="'name'"></h3>
+          <p localValue [data]="item" [key]="'combinationDescription'"></p>
           <p>{{cartItemSubtotal(item)|price}}</p>
         </ion-label>
         <ion-touchspin 

@@ -134,6 +134,7 @@ export class ProductPage implements OnInit {
     item.combinationIdx = combinationIdx;
     item.price = product.combinations[combinationIdx].price;
     item.attributeDescriptions = this.getAttributeDescriptions(product, item);
+    item = this.getCombinationDescriptions(product, item);
     return item;
   }
 
@@ -149,7 +150,7 @@ export class ProductPage implements OnInit {
     return descriptions;
   }
 
-  getCombinationDescriptions(product: ProductInterface, item: OrderableItemInterface): void {
+  getCombinationDescriptions(product: ProductInterface, item: OrderableItemInterface): OrderableItemInterface {
     const descriptionArray = [];
     const descriptionENArray = [];
     const combinations = product.combinations[item.combinationIdx];
@@ -166,6 +167,7 @@ export class ProductPage implements OnInit {
     });
     item.combinationDescription = descriptionArray.join(", ");
     item.combinationDescriptionEN = descriptionENArray.join(", ");
+    return item;
   }
 
   isAttributeEnabled(attribute: ProductAttributeInterface): boolean {
