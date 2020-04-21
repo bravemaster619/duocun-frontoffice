@@ -44,6 +44,10 @@ export class AuthenticationService {
     return this.authenticationState.value
   }
 
+  getAuthState() {
+    return this.authenticationState;
+  }
+
   async getToken() {
     return new Promise(resolve => {
       this.storage.get(Config.AUTH_TOKEN_KEY).then((token) => {
