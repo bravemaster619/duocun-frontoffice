@@ -29,15 +29,20 @@
 
     <!-- BEGIN SELECT ATTRIBUTES -->
     <ion-list *ngIf="product.attributes && product.attributes.length">
-      <ion-item *ngFor="let attribute of product.attributes; index as attrIdx;">
+      <ion-item *ngFor="let attribute of product.attributes">
         <ion-label localValue [data]="attribute" [key]="'name'"></ion-label>
-        <ion-select>
+        <ion-select 
+          *ngIf="isAttributeEnabled(attribute); Else disabledSelect" 
+          [value]="getAttributeSelectValue(attribute)"
+          (ionChange)="handleCombinationSelect(attribute, $event.target.value)"
+        >
           <ion-select-option 
-            *ngFor="let val of attribute.values; index as valIdx;" 
-            value="valIdx"
+            *ngFor="let val of attribute.values; index as valIdx" 
+            [value]="valIdx"
             localValue
             [data]="val"
             [key]="'name'"
+            [disabled]="!isAttributeValueAvailable(attribute, valIdx)"
           >
           </ion-select-option>
         </ion-select>
@@ -58,7 +63,7 @@
         <ion-row class="subtotal-row ion-padding">
           <ion-label>
             <span translate="Price"></span>
-            <span>{{product|price}}</span>
+            <span>{{item|price}}</span>
           </ion-label>
         </ion-row>
       <!--  END  QUANTITY TOUCHSPIN -->
@@ -99,6 +104,11 @@
     <!--  END SOCIAL MEDIA SHARE BUTTONS  -->
   </ion-content>
 </ng-container>
+
+<ng-template #disabledSelect>
+  <ion-select disabled>
+  </ion-select>
+</ng-template>
 
 <ng-template #slidePlaceholder>
   <ion-slides>
