@@ -50,7 +50,7 @@
     </ion-list>
     <!--  END SELECT ATTRIBUTES  -->
 
-    <ion-row class="purchase-row">
+    <ion-row class="purchase-row" *ngIf="isInStock(); Else outofStockMessage">
       <!-- BEGIN QUANTITY TOUCHSPIN -->
       <ion-col size-sm="12" size-md="4" >
         <ion-row class="touchspin-row ion-padding">
@@ -69,10 +69,10 @@
       <!--  END  QUANTITY TOUCHSPIN -->
       </ion-col>
       <!-- BEGIN PURCHASE BUTTONS -->
-      <ion-col size-sm="12" size-md="8" >
+      <ion-col size-sm="12" size-md="8">
         <ion-row class="purchase-buttons-row ion-padding">
           <ion-col>
-            <ion-button size="medium" expand="full">
+            <ion-button size="medium" expand="full" (click)="addToCart()">
               <ion-icon slot="start" name="cart-outline"></ion-icon>
               {{"Add to Cart"|translate}}
             </ion-button>
@@ -104,6 +104,13 @@
     <!--  END SOCIAL MEDIA SHARE BUTTONS  -->
   </ion-content>
 </ng-container>
+
+<ng-template #outofStockMessage>
+  <ion-row class="ion-padding">
+    <ion-label color="danger" localValue [data]="product.stock" [key]="'outofstockMessage'" [fallback]="'Out of stock'">
+    </ion-label>
+  </ion-row>
+</ng-template>
 
 <ng-template #disabledSelect>
   <ion-select disabled>

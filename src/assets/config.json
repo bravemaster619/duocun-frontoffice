@@ -10,5 +10,6 @@
     "DEFAULT_LANG": "en"
   },
   "AUTH_TOKEN_KEY": "duocun-auth-token",
-  "LANG_KEY": "duocun-lang"
+  "LANG_KEY": "duocun-lang",
+  "CART_KEY": "duocun-shopping-cart"
 }

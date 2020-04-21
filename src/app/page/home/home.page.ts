@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
+import { CartService } from 'src/app/service/cart/cart.service';
+import { CartInterface } from 'src/app/model/Cart';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomePage {
 
+  private cart: CartInterface;
+
   constructor(
     private title: Title,
     private meta: Meta,
-    private translator: TranslateService
+    private translator: TranslateService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -24,7 +29,11 @@ export class HomePage {
         name: 'description',
         content: desc
       });
-    })
+    });
+    this.cartService.getCart().subscribe(cart => {
+      console.log(cart);
+      this.cart = cart;
+    });
   }
 
 }

@@ -5,6 +5,7 @@ import { ProductInterface, ProductAttributeInterface, ProductCombinationInterfac
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { OrderableItemInterface } from 'src/app/model/OrderableItem';
+import { CartService } from 'src/app/service/cart/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -22,7 +23,8 @@ export class ProductPage implements OnInit {
     private apiService: ApiService,
     private activatedRoute: ActivatedRoute,
     private translator: TranslateService,
-    private title: Title
+    private title: Title,
+    private cartService: CartService
   ) { }
 
   ngOnInit() {
@@ -73,6 +75,21 @@ export class ProductPage implements OnInit {
     this.item.attributeDescriptions = this.getAttributeDescriptions(this.product, this.item);
   }
 
+  addToCart() {
+    this.cartService.addItem(this.item);
+  }
+
+  isInStock() {
+    if (!this.product.stock || !this.product.stock.enabled) {
+      return true;
+    }
+    if (this.item.combinationIdx !== undefined) {
+      return this.product.combinations[this.item.combinationIdx].quantity > 0;
+    } else {
+      return this.product.stock.quantity > 0;
+    }
+  }
+
   getDefaultItemFromProduct(product:ProductInterface): OrderableItemInterface {
     let item:any = {
       productId: product._id,
@@ -82,11 +99,30 @@ export class ProductPage implements OnInit {
       item.price = product.price;
       return item;
     }
-    item.combinationIdx = 0;
-    item.price = product.combinations[item.combinationIdx].price;
+    if (!product.stock || !product.stock.enabled) {
+      return this.getItemFromCombinationIndex(product, item, 0);
+    } 
+    // if product stock is enabled, find the available item
+    let availableItemIndex = -1;
+    for (let i = 0; i < product.combinations.length; i++) {
+      if (product.combinations[i].quantity > 0) {
+        availableItemIndex = i;
+      }
+    }
+    if (availableItemIndex !== -1) {
+      return this.getItemFromCombinationIndex(product, item, availableItemIndex);
+    } else {
+      return this.getItemFromCombinationIndex(product, item, 0);
+    }
+  }
+
+  getItemFromCombinationIndex(product:ProductInterface, item:OrderableItemInterface, combinationIdx: number) {
+    item.combinationIdx = combinationIdx;
+    item.price = product.combinations[combinationIdx].price;
     item.attributeDescriptions = this.getAttributeDescriptions(product, item);
     return item;
   }
+
   getAttributeDescriptions(product: ProductInterface, item: OrderableItemInterface): Array<string> {
     const descriptions = [];
     const combinations = product.combinations[item.combinationIdx];
