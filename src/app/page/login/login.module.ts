@@ -10,15 +10,17 @@ import { LoginPage } from './login.page';
 import { FormUsernameComponent } from './form-username/form-username.component';
 import { FormPhoneComponent } from './form-phone/form-phone.component';
 import { RouterModule } from '@angular/router';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
     TranslateModule,
-    RouterModule.forChild([])
+    RouterModule.forChild([]),
+    IonicStorageModule.forRoot(),
+    LoginPageRoutingModule
   ],
   exports: [
     FormPhoneComponent,

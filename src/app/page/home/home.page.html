@@ -12,7 +12,7 @@
         {{cart|quantity}}
       </ion-badge>
     </ion-tab-button>
-    <ion-tab-button tab="my-account">
+    <ion-tab-button tab="my-account" *ngIf="loggedIn">
       <ion-icon name="person-circle"></ion-icon>
       <ion-label translate="My Account"></ion-label>
     </ion-tab-button>

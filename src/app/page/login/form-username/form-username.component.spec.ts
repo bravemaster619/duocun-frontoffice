@@ -3,6 +3,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { FormUsernameComponent } from './form-username.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
+import { RouterModule } from '@angular/router';
 
 describe('FormUsernameComponent', () => {
   let component: FormUsernameComponent;
@@ -13,7 +16,10 @@ describe('FormUsernameComponent', () => {
       declarations: [ FormUsernameComponent ],
       imports: [
         IonicModule.forRoot(),
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
+        HttpClientModule,
+        IonicStorageModule.forRoot(),
+        RouterModule.forRoot([])
       ],
     }).compileComponents();
 

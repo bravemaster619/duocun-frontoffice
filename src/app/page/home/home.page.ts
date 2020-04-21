@@ -3,7 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { CartService } from 'src/app/service/cart/cart.service';
 import { CartInterface } from 'src/app/model/cart.model';
-
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -12,12 +12,14 @@ import { CartInterface } from 'src/app/model/cart.model';
 export class HomePage {
 
   cart: CartInterface;
+  loggedIn: boolean;
 
   constructor(
     private title: Title,
     private meta: Meta,
     private translator: TranslateService,
-    private cartService: CartService
+    private cartService: CartService,
+    private auth: AuthenticationService
   ) {}
 
   ngOnInit() {
@@ -32,6 +34,9 @@ export class HomePage {
     });
     this.cartService.getCart().subscribe(cart => {
       this.cart = cart;
+    });
+    this.auth.getAuthState().subscribe(loggedIn => {
+      this.loggedIn = loggedIn;
     });
   }
 

@@ -7,6 +7,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormUsernameComponent } from './form-username/form-username.component';
 import { FormPhoneComponent } from './form-phone/form-phone.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 describe('LoginPage', () => {
   let component: LoginPage;
@@ -22,7 +24,9 @@ describe('LoginPage', () => {
       imports: [
         RouterModule.forRoot([]),
         IonicModule.forRoot(),
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
+        HttpClientModule,
+        IonicStorageModule.forRoot()
       ]
     }).compileComponents();
 
