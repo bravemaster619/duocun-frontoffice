@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MyAccountPage } from './my-account.page';
-import { AuthGuard } from 'src/app/guard/auth.guard';
+import { NotFoundPage } from './not-found.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: MyAccountPage,
-    canActivate: [AuthGuard]
+    component: NotFoundPage
   }
 ];
 
@@ -16,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MyAccountPageRoutingModule {}
+export class NotFoundPageRoutingModule {}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api/api.service';
 import { ProductInterface, ProductAttributeInterface, ProductCombinationInterface, containEqualCombinationValues, ProductCombinationValueInterface, areEqualCombinationValues } from 'src/app/model/product.model';
 import { Title } from '@angular/platform-browser';
@@ -25,7 +25,8 @@ export class ProductPage implements OnInit {
     private translator: TranslateService,
     private title: Title,
     private cartService: CartService,
-    private alert: AlertController
+    private alert: AlertController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -42,7 +43,7 @@ export class ProductPage implements OnInit {
             this.title.setTitle(this.product.name);
             this.item = this.getDefaultItemFromProduct(this.product);
           } else {
-            // this.router.navigate(["/404"]);
+            this.router.navigate(["/not-found"]);
           }
           this.loading = false;
         })
