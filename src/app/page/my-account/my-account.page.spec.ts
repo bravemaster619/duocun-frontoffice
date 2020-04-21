@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
-
+import { AgmCoreModule } from '@agm/core';
 import { MyAccountPage } from './my-account.page';
 
 describe('MyAccountPage', () => {
@@ -10,7 +10,10 @@ describe('MyAccountPage', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MyAccountPage ],
-      imports: [IonicModule.forRoot()]
+      imports: [
+        IonicModule.forRoot(),
+        AgmCoreModule.forRoot()
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(MyAccountPage);

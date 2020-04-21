@@ -8,5 +8,26 @@
 </ion-header>
 
 <ion-content>
-  My Account Page
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating" translate="Username"></ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" translate="Phone Number"></ion-label>
+      <ion-input readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" translate="Password"></ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" translate="Password Confirmation"></ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <ion-item class="delivery-address" lines="none">
+      <ion-label position="floating" translate="Address"></ion-label>
+      <agm-map></agm-map>
+    </ion-item>
+  </ion-list>
 </ion-content>
