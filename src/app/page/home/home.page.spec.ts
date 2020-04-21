@@ -8,6 +8,7 @@ import { SideMenuComponent } from 'src/app/component/side-menu/side-menu.compone
 import { RouterModule } from '@angular/router';
 import { IonicStorageModule } from '@ionic/storage';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
+import { QuantityPipeModule } from 'src/app/pipe/quantity/quantity.module';
 
 describe('HomePage', () => {
   let component: HomePage;
@@ -31,7 +32,8 @@ describe('HomePage', () => {
         }),
         RouterModule.forRoot([]),
         IonicStorageModule.forRoot(),
-        LocalValueDirectiveModule
+        LocalValueDirectiveModule,
+        QuantityPipeModule
       ]
     }).compileComponents();
 

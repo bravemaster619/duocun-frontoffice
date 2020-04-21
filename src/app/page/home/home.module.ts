@@ -7,6 +7,7 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { SideMenuModule } from 'src/app/component/side-menu/side-menu.module';
+import { QuantityPipeModule } from 'src/app/pipe/quantity/quantity.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { SideMenuModule } from 'src/app/component/side-menu/side-menu.module';
     IonicModule,
     HomePageRoutingModule, 
     TranslateModule,
-    SideMenuModule
+    SideMenuModule,
+    QuantityPipeModule
   ],
   declarations: [
     HomePage,

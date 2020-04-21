@@ -8,7 +8,9 @@
     <ion-tab-button tab="cart">
       <ion-icon name="cart-outline"></ion-icon>
       <ion-label translate="Cart"></ion-label>
-      <ion-badge>5</ion-badge>
+      <ion-badge>
+        {{cart|quantity}}
+      </ion-badge>
     </ion-tab-button>
     <ion-tab-button tab="my-account">
       <ion-icon name="person-circle"></ion-icon>
