@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
 import { TouchspinModule } from 'src/app/component/touchspin/touchspin.module';
-import { PricePipeModule } from 'src/app/pipe/price.module';
+import { PricePipeModule } from 'src/app/pipe/price/price.module';
 
 describe('ProductPage', () => {
   let component: ProductPage;

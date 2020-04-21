@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { RouterModule } from '@angular/router';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
-import { PricePipeModule } from 'src/app/pipe/price.module';
+import { PricePipeModule } from 'src/app/pipe/price/price.module';
 
 describe('BrowsePage', () => {
   let component: BrowsePage;

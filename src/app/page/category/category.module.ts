@@ -10,7 +10,7 @@ import { CategoryPage } from './category.page';
 import { LocalValueDirectiveModule } from 'src/app/directive/local-value.module';
 import { IonImageModule } from 'src/app/component/ion-image/ion-image.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { PricePipeModule } from 'src/app/pipe/price.module';
+import { PricePipeModule } from 'src/app/pipe/price/price.module';
 
 @NgModule({
   imports: [

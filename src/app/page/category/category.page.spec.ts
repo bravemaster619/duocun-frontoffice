@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { TranslateModule } from '@ngx-translate/core';
-import { PricePipeModule } from 'src/app/pipe/price.module';
+import { PricePipeModule } from 'src/app/pipe/price/price.module';
 
 describe('CategoryPage', () => {
   let component: CategoryPage;
