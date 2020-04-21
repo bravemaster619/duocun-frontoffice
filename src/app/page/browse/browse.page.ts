@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/service/api.service';
+import { ApiService } from 'src/app/service/api/api.service';
 import { FeaturedProductInterface } from 'src/app/model/Product';
 
 @Component({

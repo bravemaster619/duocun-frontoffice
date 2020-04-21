@@ -1,7 +1,6 @@
-export interface OrderableItem {
+export interface OrderableItemInterface {
   productId: string;
-  attrIdx?: number;
-  valIdx?: number;
+  combinationIdx: number;
   attributeDescriptions?: Array<string>;
   price: number;
   quantity: number;

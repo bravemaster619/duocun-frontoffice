@@ -11,6 +11,7 @@ export interface FeaturedProductInterface {
   order: number
 }
 export interface ProductAttributeInterface {
+  _id: string,
   name: string,
   nameEN?: string,
   values: Array<{
@@ -20,6 +21,18 @@ export interface ProductAttributeInterface {
     quantity: number
   }>
 }
+
+export interface ProductCombinationValueInterface {
+  attrIdx: string,
+  valIdx: number|string
+}
+
+export interface ProductCombinationInterface {
+  price: number;
+  quantity: number;
+  values: Array<ProductCombinationValueInterface>;
+}
+
 export interface ProductInterface {
   _id: string,
   name: string,
@@ -41,5 +54,25 @@ export interface ProductInterface {
     outofstockMessage?: string,
     outofstockMessageEN?: string
   },
-  attributes: Array<any>
+  attributes: Array<ProductAttributeInterface>,
+  combinations: Array<ProductCombinationInterface>
+}
+
+export function areEqualCombinationValues(one: ProductCombinationValueInterface, other: ProductCombinationValueInterface):boolean {
+  return one.valIdx == other.valIdx && one.attrIdx == other.attrIdx;
+}
+
+export function containEqualCombinationValues(one: ProductCombinationInterface, other: ProductCombinationInterface): boolean {
+  if ((!one.values || !one.values.length) && (!other.values || !other.values.length)) {
+    return true;
+  }
+  if (one.values.length !== other.values.length) {
+    return false;
+  }
+  for (let i = 0; i< one.values.length; i++) {
+    if (!other.values.find(w => areEqualCombinationValues(one.values[i], w))) {
+      return false;
+    }
+  }
+  return true;
 }

@@ -1,6 +1,6 @@
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/service/api.service';
+import { ApiService } from 'src/app/service/api/api.service';
 import { ProductInterface } from 'src/app/model/Product';
 import { CategoryInterface } from 'src/app/model/Category';
 import { Title } from '@angular/platform-browser';

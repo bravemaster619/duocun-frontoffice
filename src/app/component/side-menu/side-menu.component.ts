@@ -3,7 +3,7 @@ import { MenuController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import * as Config from "src/assets/config.json";
-import { ApiService } from 'src/app/service/api.service';
+import { ApiService } from 'src/app/service/api/api.service';
 import { MenuCategory } from "src/app/model/Category";
 @Component({
   selector: 'app-side-menu',
