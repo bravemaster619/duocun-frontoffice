@@ -28,5 +28,13 @@
     "Share": "Share",
     "Quantity": "Quantity",
     "Add to Cart": "Add to Cart",
-    "Subtotal": "Subtotal"
+    "Subtotal": "Subtotal",
+    "Price": "Price",
+    "There are no items": "There are no items",
+    "Clear Cart": "Clear Cart",
+    "Checkout": "Checkout",
+    "Notice": "Notice",
+    "Product has been added to cart": "Product has been added to cart",
+    "OK": "OK",
+    "Buy Now": "Buy Now"
 }
