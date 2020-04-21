@@ -5,3 +5,7 @@ export interface OrderableItemInterface {
   price: number;
   quantity: number;
 }
+
+export function areEqualOrderableItems(one: OrderableItemInterface, other: OrderableItemInterface) {
+  return one.productId == other.productId && one.combinationIdx == other.combinationIdx;
+}
