@@ -79,6 +79,10 @@ export class ProductPage implements OnInit {
     this.cartService.addItem(this.item);
   }
 
+  buyNow() {
+    this.cartService.setBuyNowItem(this.item);
+  }
+
   isInStock() {
     if (!this.product.stock || !this.product.stock.enabled) {
       return true;
