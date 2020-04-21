@@ -21,7 +21,10 @@ describe('ProductPage', () => {
       imports: [
         IonicModule.forRoot(),
         IonImageModule,
-        RouterModule.forRoot([]),
+        RouterModule.forRoot([{
+          path: 'not-found',
+          loadChildren: () => import('src/app/page/not-found/not-found.module').then( m => m.NotFoundPageModule)
+        }]),
         TranslateModule.forRoot(),
         HttpClientModule,
         IonicStorageModule.forRoot(),

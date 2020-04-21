@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { NotFoundPage } from './not-found.page';
 import { TranslateModule } from '@ngx-translate/core';
@@ -13,7 +15,9 @@ describe('NotFoundPage', () => {
       declarations: [ NotFoundPage ],
       imports: [
         IonicModule.forRoot(),
-        TranslateModule.forChild()
+        TranslateModule.forRoot(),
+        HttpClientModule,
+        IonicStorageModule.forRoot()
       ]
     }).compileComponents();
 
