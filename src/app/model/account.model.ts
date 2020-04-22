@@ -14,6 +14,6 @@ export interface AccountInterface {
   username?: string;
   password?: string;
   passwordConfirmation?: string;
-  phoneNumber?: string;
+  phone?: string;
   location?: LocationInterface;
 }
