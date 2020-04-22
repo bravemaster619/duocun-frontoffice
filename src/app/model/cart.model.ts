@@ -9,6 +9,14 @@ export interface CartInterface {
   items: Array<CartItemInterface>;
 }
 
-export function getCartItemSubtotal(item: CartItemInterface) {
+export function getCartItemSubtotal(item: CartItemInterface): number {
   return item.price * item.quantity;
+}
+
+export function getCartSubtotal(cart: CartInterface): number {
+  let price = 0;
+  cart.items.forEach(item => {
+    price += getCartItemSubtotal(item);
+  });
+  return price;
 }
