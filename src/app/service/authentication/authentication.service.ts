@@ -9,7 +9,7 @@ import * as Config from "src/assets/config.json";
 })
 export class AuthenticationService {
 
-  authenticationState = new BehaviorSubject(false);
+  authenticationState = new BehaviorSubject(true);
 
   constructor(
     private storage: Storage,
@@ -24,6 +24,8 @@ export class AuthenticationService {
     this.storage.get(Config.AUTH_TOKEN_KEY).then(res => {
       if (res) {
         this.authenticationState.next(true);
+      } else {
+        this.authenticationState.next(false);
       }
     })
   }
