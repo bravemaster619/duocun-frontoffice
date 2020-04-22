@@ -18,6 +18,7 @@
     "Resend OTP Code": "重新发送验证码",
     "Sign Up": "注册",
     "Verification Code": "验证码",
+    "Send Verification Code": "发送验证码",
     "Password Confirmation": "确认密码",
     "Home": "主页",
     "Duocun": "多村",
@@ -46,5 +47,7 @@
     "Please set address": "请选择地址",
     "Password too short": "密码太短",
     "Saved successfully": "保存成功",
-    "Login failed": "登录失败"
+    "Login failed": "登录失败",
+    "The data you requested is not found": "找不到您要求的资料",
+    "Category is empty": "没有数据可显示"
 }
