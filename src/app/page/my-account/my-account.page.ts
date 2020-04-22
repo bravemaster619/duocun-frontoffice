@@ -44,6 +44,7 @@ export class MyAccountPage implements OnInit {
       passwordConfirmation: '',
       phone: ''
     };
+    //@ts-ignore
     this.geocodeKey = process.env.NODE_ENV === "production" ? Config.production.GEOCODE_KEY : Config.development.GEOCODE_KEY;
     this.error = '';
   }
