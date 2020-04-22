@@ -8,6 +8,7 @@
 
     "Hello": "Hello in English",
     "Sign In": "登录",
+    "Sign Out": "登出",
     "Username": "用户名",
     "Password": "密码",
     "Phone Number": "手机号码",
@@ -17,6 +18,7 @@
     "Resend OTP Code": "重新发送验证码",
     "Sign Up": "注册",
     "Verification Code": "验证码",
+    "Send Verification Code": "发送验证码",
     "Password Confirmation": "确认密码",
     "Home": "主页",
     "Duocun": "多村",
@@ -37,5 +39,15 @@
     "Product has been added to cart": "产品已添加到购物车",
     "OK": "确认",
     "Buy Now": "立即购买",
-    "Address": "地址"
+    "Address": "地址",
+    "Save": "保存",
+    "Please input username": "请输入用户名",
+    "Password mismatch": "密码不符合",
+    "Username too short": "用户名太短",
+    "Please set address": "请选择地址",
+    "Password too short": "密码太短",
+    "Saved successfully": "保存成功",
+    "Login failed": "登录失败",
+    "The data you requested is not found": "找不到您要求的资料",
+    "Category is empty": "没有数据可显示"
 }

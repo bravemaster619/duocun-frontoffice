@@ -8,6 +8,7 @@
 
     "Hello": "Hello in English",
     "Sign In": "Sign In",
+    "Sign Out": "Sign Out",
     "Username": "Username",
     "Password": "Password",
     "Phone Number": "Phone Number",
@@ -17,6 +18,7 @@
     "Resend OTP Code": "Resend OTP Code",
     "Sign Up": "Sign Up",
     "Verification Code": "Verification Code",
+    "Send Verification Code": "Send Verification Code",
     "Password Confirmation": "Password Confirmation",
     "Home": "Home",
     "Duocun": "Duocun",
@@ -37,5 +39,15 @@
     "Product has been added to cart": "Product has been added to cart",
     "OK": "OK",
     "Buy Now": "Buy Now",
-    "Address": "Address"
+    "Address": "Address",
+    "Save": "Save",
+    "Please input username": "Please input username",
+    "Password mismatch": "Password mismatch",
+    "Username too short": "Username too short",
+    "Please set address": "Please set address",
+    "Password too short": "Password too short",
+    "Saved successfully": "Saved successfully",
+    "Login failed": "Login failed",
+    "The data you requested is not found": "The data you requested is not found",
+    "Category is empty": "No data to display"
 }
