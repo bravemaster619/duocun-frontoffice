@@ -38,5 +38,13 @@
     "Product has been added to cart": "Product has been added to cart",
     "OK": "OK",
     "Buy Now": "Buy Now",
-    "Address": "Address"
+    "Address": "Address",
+    "Save": "Save",
+    "Please input username": "Please input username",
+    "Password mismatch": "Password mismatch",
+    "Username too short": "Username too short",
+    "Please set address": "Please set address",
+    "Password too short": "Password too short",
+    "Saved successfully": "Saved successfully",
+    "Login failed": "Login failed"
 }

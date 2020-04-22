@@ -38,5 +38,13 @@
     "Product has been added to cart": "产品已添加到购物车",
     "OK": "确认",
     "Buy Now": "立即购买",
-    "Address": "地址"
+    "Address": "地址",
+    "Save": "保存",
+    "Please input username": "请输入用户名",
+    "Password mismatch": "密码不符合",
+    "Username too short": "用户名太短",
+    "Please set address": "请选择地址",
+    "Password too short": "密码太短",
+    "Saved successfully": "保存成功",
+    "Login failed": "登录失败"
 }

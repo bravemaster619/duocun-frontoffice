@@ -8,26 +8,65 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list *ngIf="!loading; Else skeleton">
     <ion-item>
       <ion-label position="floating" translate="Username"></ion-label>
-      <ion-input></ion-input>
+      <ion-input [value]="account.username" (change)="account.username = $event.target.value"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" translate="Phone Number"></ion-label>
-      <ion-input readonly></ion-input>
+      <ion-input [value]="account.phone" readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" translate="Password"></ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [value]="account.password" type="password" (change)="account.password = $event.target.value"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" translate="Password Confirmation"></ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [value]="account.passwordConfirmation" type="password" (change)="account.passwordConfirmation = $event.target.value"></ion-input>
     </ion-item>
     <ion-item class="delivery-address" lines="none">
-      <ion-label position="floating" translate="Address"></ion-label>
-      <agm-map></agm-map>
+      <ion-label position="floating" translate="Address" class="ion-margin-bottom"></ion-label>
+      <agm-map [latitude]="mapLat" [longitude]="mapLng" (mapClick)="handleMapClick($event)">
+        <agm-marker [latitude]="account.location.lat" [longitude]="account.location.lng"></agm-marker>
+      </agm-map>
+    </ion-item>
+    <ion-item class="ion-margin-top ion-margin-bottom" lines="none">
+      <ion-button [disabled]="processing" color="primary" size="medium" expand="full" slot="end" (click)="handleSave()">
+        <ion-icon name="save" class="ion-margin-end"></ion-icon>
+        {{"Save"|translate}}
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>
+
+<ng-template #skeleton>
+  <ion-list lines="none">
+    <ion-item>
+      <ion-label position="stacked" translate="Username"></ion-label>
+      <ion-skeleton-text animated style="height: 36px;"></ion-skeleton-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" translate="Phone Number"></ion-label>
+      <ion-skeleton-text animated style="height: 36px;"></ion-skeleton-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" translate="Password"></ion-label>
+      <ion-skeleton-text animated style="height: 36px;"></ion-skeleton-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked" translate="Password Confirmation"></ion-label>
+      <ion-skeleton-text animated style="height: 36px;"></ion-skeleton-text>
+    </ion-item>
+    <ion-item class="delivery-address">
+      <ion-label position="stacked" translate="Address"></ion-label>
+      <ion-skeleton-text animated style="height: 240px;"></ion-skeleton-text>
+    </ion-item>
+    <ion-item class="ion-margin-top ion-margin-bottom" lines="none">
+      <ion-button disabled color="primary" size="medium" expand="full" slot="end">
+        <ion-icon name="save" class="ion-margin-end"></ion-icon>
+        {{"Save"|translate}}
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ng-template>

@@ -12,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { AgmCoreModule } from '@agm/core';
 import * as Config from 'src/assets/config.json';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,8 +23,9 @@ import * as Config from 'src/assets/config.json';
     TranslateModule,
     AgmCoreModule.forRoot({
       //@ts-ignore
-      apiKey: process.env.NODE_ENV === "production" ? Config.production.MAP_KEY : Config.development.MAP_KEY
-    })
+      apiKey: process.env.NODE_ENV === "production" ? Config.production.MAP_KEY : Config.development.MAP_KEY,
+      libraries: ['places']
+    }),
   ],
   declarations: [MyAccountPage]
 })
