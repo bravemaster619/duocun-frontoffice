@@ -34,7 +34,6 @@ export class SideMenuComponent implements OnInit {
       });
     });
     this.auth.getAuthState().subscribe(loggedIn => {
-      console.log(loggedIn);
       this.loggedIn = loggedIn;
     });
   }
