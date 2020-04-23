@@ -29,6 +29,7 @@
           style="width: 72px;" 
           size="sm" 
           [initialValue]="item.quantity" 
+          [minimumValue]="0"
           (valueChange)="handleQuantityChange(itemIdx, $event.value)"
         >
         </ion-touchspin>
