@@ -1,7 +1,7 @@
 {
   "development": {
-    "API_URL": "http://localhost:8000/api",
-    "API_V2_URL": "http://localhost:8000/api/v2",
+    "API_URL": "http://52.68.71.21:8000/api",
+    "API_V2_URL": "http://52.68.71.21:8000/api/v2",
     "DEFAULT_LANG": "en",
     "GEOCODE_KEY": "AIzaSyAjpSxjBTkdzKMcqAAmq72UY1-DTjl8b0s",
     "PLACE_KEY": "AIzaSyBotSR2YeQMWKxPl4bN1wuwxNTvtWaT_xc",
