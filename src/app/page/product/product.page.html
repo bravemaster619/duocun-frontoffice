@@ -28,7 +28,7 @@
     <!--  END TITLE AND DESCRIPTION  -->
 
     <!-- BEGIN SELECT ATTRIBUTES -->
-    <ion-list *ngIf="product.attributes && product.attributes.length">
+    <ion-list *ngIf="product.combinations && product.combinations.length && product.attributes && product.attributes.length">
       <ion-item *ngFor="let attribute of product.attributes">
         <ion-label localValue [data]="attribute" [key]="'name'"></ion-label>
         <ion-select 
