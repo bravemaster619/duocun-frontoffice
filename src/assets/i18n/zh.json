@@ -68,5 +68,6 @@
     "Username is already in use": "用户名已被使用",
     "Registration failed": "注册失败",
     "Ordered successfully": "谢谢您的订单",
-    "Your card number is incomplete.": "您的卡号不完整"
+    "Your card number is incomplete.": "您的卡号不完整",
+    "Your card's expiration date is incomplete.": "您的卡的到期日期不完整。"
 }
