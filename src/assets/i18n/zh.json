@@ -61,5 +61,7 @@
     "Your card's expiration date is in the past.": "您的卡的过期日期是过去的日期。",
     "Your card's expiration year is in the past.": "您的卡的有效期限是过去。",
     "Your card's security code is invalid.": "您的卡的安全码无效。",
-    "Your postal code is incomplete": "您的邮递区号不完整。"
+    "Your postal code is incomplete": "您的邮递区号不完整。",
+    "Order History": "订单历史",
+    "No data to display": "没有数据显示"
 }
