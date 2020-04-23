@@ -43,7 +43,7 @@ export class FormUsernameComponent implements OnInit {
       observable.subscribe(token => {
         if (token) {
           this.auth.login(<string> token).then(() => {
-            this.router.navigate([this.returnUrl]);
+            this.router.navigateByUrl(this.returnUrl);
           });
         } else {
           this.error = "Login failed";

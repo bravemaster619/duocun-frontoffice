@@ -40,7 +40,7 @@ export class FormPhoneComponent implements OnInit {
       observable.subscribe((token: string) => {
         if (token) {
           this.auth.login(token).then(() => {
-            this.router.navigate([this.returnUrl]);
+            this.router.navigateByUrl(this.returnUrl);
           });
         } else {
           this.showAlert("Notice", "Login failed", "OK");
