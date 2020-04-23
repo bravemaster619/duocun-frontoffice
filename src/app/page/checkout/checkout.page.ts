@@ -33,6 +33,7 @@ export class CheckoutPage implements OnInit {
   mapLoading: boolean;
   processing: boolean;
   invalidError: any;
+  notes: string;
   extraData = {
     "name": "",
     "address_city": "",
@@ -209,7 +210,8 @@ export class CheckoutPage implements OnInit {
       token,
       items: this.cart.items,
       address: this.address,
-      location: this.location
+      location: this.location,
+      notes: this.notes
     }).then(observable => {
       observable.subscribe((data:any) => {
         if (data.success) { 

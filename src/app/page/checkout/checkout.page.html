@@ -17,11 +17,15 @@
   </ion-row>
   <ion-row class="ion-padding">
     <ion-col>
-      <agm-map *ngIf="!mapLoading" [latitude]="mapLat" [longitude]="mapLng" (mapClick)="handleMapClick($event)">
+      <agm-map *ngIf="!mapLoading; Else mapSkeleton" [latitude]="mapLat" [longitude]="mapLng" (mapClick)="handleMapClick($event)">
         <agm-marker [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
       </agm-map>
     </ion-col>
   </ion-row>
+  <ion-item class="ion-padding">
+    <ion-label position="floating" translate="Address"></ion-label>
+    <ion-input [value]="address" (change)="address=$event.target.value"></ion-input>
+  </ion-item>
   <!--  END DELIVERY ADDRESS MAP  -->
 
   <!-- BEGIN PRICE DETAIL -->
@@ -73,6 +77,13 @@
     </ion-row>
   </ng-container>
   <!--  END PRICE DETAIL  -->
+  
+  <!-- BEGIN ORDER NOTES -->
+  <ion-item class="ion-padding">
+    <ion-label position="floating" translate="Notes"></ion-label>
+    <ion-textarea [value]="notes" (change)="notes=$event.target.value"></ion-textarea>
+  </ion-item>
+  <!--  END ORDER NOTES  -->
 
   <!-- BEGIN PAYMENT FORM -->
   <ng-container *ngIf="!cartLoading && summary.isValid">
@@ -103,6 +114,10 @@
   </ng-container>
   <!--  END PAYMENT FORM  -->
 </ion-content>
+
+<ng-template #mapSkeleton>
+  <ion-skeleton-text animated style="height: 360px;"></ion-skeleton-text>
+</ng-template>
 
 <ng-template #invalidItem>
   <ion-icon name="alert-circle-outline"></ion-icon>
