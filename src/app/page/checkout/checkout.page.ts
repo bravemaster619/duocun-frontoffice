@@ -32,7 +32,7 @@ export class CheckoutPage implements OnInit {
   cartLoading: boolean;
   mapLoading: boolean;
   processing: boolean;
-  invalidError: string;
+  invalidError: any;
   extraData = {
     "name": "",
     "address_city": "",
