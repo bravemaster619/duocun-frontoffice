@@ -4,7 +4,7 @@ import { Platform } from '@ionic/angular';
 import { CartInterface } from 'src/app/model/cart.model';
 import * as Config from "src/assets/config.json";
 import { OrderableItemInterface, areEqualOrderableItems } from 'src/app/model/orderable-item.model';
-import { Subject, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -49,11 +49,11 @@ export class CartService {
     return this.storage.set(Config.CART_KEY, this.cart);
   }
 
-  getCart(): Subject<CartInterface> {
+  getCart(): BehaviorSubject<CartInterface> {
     return this.cart$;
   }
 
-  getBuyNowCart(): Subject<CartInterface> {
+  getBuyNowCart(): BehaviorSubject<CartInterface> {
     return this.buyNowCart$;
   }
 
