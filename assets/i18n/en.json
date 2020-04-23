@@ -69,5 +69,6 @@
     "Username is already in use": "Username is already in use",
     "Registration failed": "Registration failed",
     "Ordered successfully": "Ordered successfully",
-    "Your card's expiration date is incomplete.": "Your card's expiration date is incomplete."
+    "Your card's expiration date is incomplete.": "Your card's expiration date is incomplete.",
+    "Notes": "Notes"
 }
