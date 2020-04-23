@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/tabs/cart"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center" translate="Checkout"></ion-title>
   </ion-toolbar>
@@ -47,7 +47,7 @@
           <p localValue [data]="item" [key]="'combinationDescription'"></p>
           <p>{{item|price}} &times; {{item.quantity}}</p>
         </ion-label>
-        <ion-label slot="end" class="ion-text-right" *ngIf="summary.items[itemIdx].isValid; Else invalidItem">
+        <ion-label slot="end" class="ion-text-right" *ngIf="summary.items[itemIdx] && summary.items[itemIdx].isValid; Else invalidItem">
           <!-- {{cartItemSubtotal(item)|price}} -->
           {{summary.items[itemIdx]['subtotal']|price}}
         </ion-label>
