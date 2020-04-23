@@ -66,5 +66,7 @@
     "No data to display": "没有数据显示",
     "Verification failed": "验证失败",
     "Username is already in use": "用户名已被使用",
-    "Registration failed": "注册失败"
+    "Registration failed": "注册失败",
+    "Ordered successfully": "谢谢您的订单",
+    "Your card number is incomplete.": "您的卡号不完整"
 }

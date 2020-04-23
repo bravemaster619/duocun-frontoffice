@@ -109,7 +109,9 @@ export class CartService {
 
   clearCart() {
     this.cart.items = [];
+    this.buyNowCart.items = [];
     this.cart$.next(this.cart);
+    this.buyNowCart$.next(this.buyNowCart);
     this.saveCart();
   }
 

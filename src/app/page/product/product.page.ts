@@ -91,6 +91,7 @@ export class ProductPage implements OnInit {
 
   buyNow() {
     this.cartService.setBuyNowItem(this.item);
+    this.router.navigateByUrl("/checkout?cart-type=buy-now");
   }
 
   isInStock() {

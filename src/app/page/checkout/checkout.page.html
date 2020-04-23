@@ -110,9 +110,17 @@
 </ng-template>
 
 <ng-template #invalidCart>
-  <ion-row class="ion-padding">
+  <ion-row class="ion-padding" *ngIf="summary.error !== 'no_items'; Else emptyCart">
     <ion-col align="center">
       <ion-label color="danger" translate="Some items cannot be purchased. Please edit your order."></ion-label>
+    </ion-col>
+  </ion-row>
+</ng-template>
+
+<ng-template #emptyCart>
+  <ion-row class="ion-padding">
+    <ion-col align="center">
+      <ion-label color="danger" translate="No data to display"></ion-label>
     </ion-col>
   </ion-row>
 </ng-template>
