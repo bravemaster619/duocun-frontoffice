@@ -6,7 +6,8 @@
     "GEOCODE_KEY": "AIzaSyAjpSxjBTkdzKMcqAAmq72UY1-DTjl8b0s",
     "PLACE_KEY": "AIzaSyBotSR2YeQMWKxPl4bN1wuwxNTvtWaT_xc",
     "MAP_KEY": "AIzaSyCEd6D6vc9K-YzMH-QtQWRSs5HZkLKSWyk",
-    "DISTANCE_KEY": "AIzaSyAMLUumS_GtIWAiuJH7wAzu8wXQ9ohVJsg"
+    "DISTANCE_KEY": "AIzaSyAMLUumS_GtIWAiuJH7wAzu8wXQ9ohVJsg",
+    "STRIPE_KEY": "pk_test_FsGoacByMF8lGNcVKveNZFSy00ATWTilJp"
   },
   "production": {
     "API_URL": "http://localhost:8000/api",
@@ -15,7 +16,8 @@
     "GEOCODE_KEY": "AIzaSyAjpSxjBTkdzKMcqAAmq72UY1-DTjl8b0s",
     "PLACE_KEY": "AIzaSyBotSR2YeQMWKxPl4bN1wuwxNTvtWaT_xc",
     "MAP_KEY": "AIzaSyCEd6D6vc9K-YzMH-QtQWRSs5HZkLKSWyk",
-    "DISTANCE_KEY": "AIzaSyAMLUumS_GtIWAiuJH7wAzu8wXQ9ohVJsg"
+    "DISTANCE_KEY": "AIzaSyAMLUumS_GtIWAiuJH7wAzu8wXQ9ohVJsg",
+    "STRIPE_KEY": "pk_test_FsGoacByMF8lGNcVKveNZFSy00ATWTilJp"
   },
   "AUTH_TOKEN_KEY": "duocun-auth-token",
   "LANG_KEY": "duocun-lang",
