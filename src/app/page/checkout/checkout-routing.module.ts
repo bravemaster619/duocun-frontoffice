@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CheckoutPage } from './checkout.page';
+import { AuthGuard } from 'src/app/guard/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    component: CheckoutPage
+    component: CheckoutPage,
+    canActivate: [AuthGuard]
   }
 ];
 

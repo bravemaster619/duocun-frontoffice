@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { StripeToken, StripeSource } from "stripe-angular"
 import * as Config from 'src/assets/config.json';
 import { AlertController } from '@ionic/angular';
-import { observable } from 'rxjs';
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.page.html',
