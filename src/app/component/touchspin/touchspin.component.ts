@@ -27,7 +27,7 @@ export class TouchspinComponent implements OnInit {
     this.size = this.size || "md";
     this.initialValue = this.initialValue || 0;
     this.value = this.initialValue;
-    this.minValue = this.minimumValue || 1;
+    this.minValue = this.minimumValue === undefined ? 1 : this.minimumValue;
     this.maxValue = this.maximumValue;
   }
 
