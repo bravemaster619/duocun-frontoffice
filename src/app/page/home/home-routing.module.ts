@@ -11,23 +11,23 @@ const routes: Routes = [{
       path: 'product',
       children: [{
         path: ':id',
-        loadChildren: '../product/product.module#ProductPageModule'
+        loadChildren: 'src/app/page/product/product.module#ProductPageModule'
       }]
     }, {
       path: '',
-      loadChildren: '../browse/browse.module#BrowsePageModule'
+      loadChildren: 'src/app/page/browse/browse.module#BrowsePageModule'
     }]
   }, {
     path: 'cart',
     children: [{
       path: '',
-      loadChildren: '../cart/cart.module#CartPageModule'
+      loadChildren: 'src/app/page/cart/cart.module#CartPageModule'
     }]
   }, {
     path: 'my-account',
     children: [{
       path: '',
-      loadChildren: '../my-account/my-account.module#MyAccountPageModule'
+      loadChildren: 'src/app/page/my-account/my-account.module#MyAccountPageModule'
     }]
   }, {
     path: '',
@@ -39,7 +39,14 @@ const routes: Routes = [{
   component: HomePage,
   children: [{
     path: '',
-    loadChildren: '../checkout/checkout.module#CheckoutPageModule'
+    loadChildren: 'src/app/page/checkout/checkout.module#CheckoutPageModule'
+  }]
+}, {
+  path: 'order-history',
+  component: HomePage,
+  children: [{
+    path: '',
+    loadChildren: 'src/app/page/order-history/order-history.module#OrderHistoryPageModule'
   }]
 }, {
   path: '',
