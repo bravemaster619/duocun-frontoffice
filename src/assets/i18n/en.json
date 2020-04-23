@@ -63,5 +63,9 @@
     "Your card's security code is invalid.": "Your card's security code is invalid.",
     "Your postal code is incomplete": "Your postal code is incomplete",
     "Order History": "Order History",
-    "No data to display": "No data to display"
+    "No data to display": "No data to display",
+    "Registered successfully": "Registered successfully",
+    "Verification failed": "Verification failed",
+    "Username is already in use": "Username is already in use",
+    "Registration failed": "Registration failed"
 }

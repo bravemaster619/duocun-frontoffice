@@ -20,7 +20,7 @@
           <ion-row>
             <ion-col size="12">
               <ion-label translate="Phone Number"></ion-label>
-              <ion-input required type="text" autocomplete="off"></ion-input>
+              <ion-input [value]="phone" required (change)="phone=$event.target.value" type="text" autocomplete="off"></ion-input>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -30,10 +30,10 @@
           <ion-row>
             <ion-col size="6">
               <ion-label translate="Verification Code"></ion-label>
-              <ion-input required type="text" autocomplete="off"></ion-input>
+              <ion-input [value]="verificationCode" required (change)="verificationCode=$event.target.value" type="text" autocomplete="off"></ion-input>
             </ion-col>
             <ion-col size="6">
-              <ion-button class="ion-margin-top" expand="block" type="button" color="tertiary" translate="Send Verification Code"></ion-button>
+              <ion-button [disabled]="phone && phone.length > 7 && phone.lenght < 15" (click)="handleSendOTP()" class="ion-margin-top" expand="block" type="button" color="tertiary" translate="Send Verification Code"></ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -42,7 +42,7 @@
         <ion-row>
           <ion-col size="12">
             <ion-label translate="Username"></ion-label>
-            <ion-input type="text" autocomplete="on" autofocus=true></ion-input>
+            <ion-input [value]="username" type="text" (change)="username=$event.target.value" autocomplete="on" autofocus=true></ion-input>
           </ion-col>
         </ion-row>
       </ion-item>
@@ -50,7 +50,7 @@
         <ion-row>
           <ion-col size="12">
             <ion-label translate="Password"></ion-label>
-            <ion-input required type="password"></ion-input>
+            <ion-input [value]="password" (change)="password=$event.target.value" required type="password"></ion-input>
           </ion-col>
         </ion-row>
       </ion-item>
@@ -58,9 +58,12 @@
         <ion-row>
           <ion-col size="12">
             <ion-label  translate="Password Confirmation"></ion-label>
-            <ion-input required type="password"></ion-input>
+            <ion-input [value]="passwordConfirmation" (change)="passwordConfirmation=$event.target.value" required type="password"></ion-input>
           </ion-col>
         </ion-row>
+      </ion-item>
+      <ion-item class="ion-margin-top" lines="none">
+        <ion-button [disabled]="!isInputValid()" (click)="handleSignUp()" slot="end" translate="Sign Up" size="medium" expand="block"></ion-button>
       </ion-item>
     </ion-list>
   </form>
