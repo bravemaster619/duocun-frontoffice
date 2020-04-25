@@ -5,11 +5,12 @@ import { CartService } from 'src/app/service/cart/cart.service';
 import { getCartItemSubtotal, getCartSubtotal, CartPriceSummaryInterface } from 'src/app/model/cart.model';
 import { ApiService } from 'src/app/service/api/api.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { LocationInterface } from 'src/app/model/account.model';
+import { LocationInterface, AccountInterface } from 'src/app/model/account.model';
 import { TranslateService } from '@ngx-translate/core';
 import { StripeToken, StripeSource } from "stripe-angular"
 import * as Config from 'src/assets/config.json';
 import { AlertController } from '@ionic/angular';
+import { AuthenticationService } from 'src/app/service/authentication/authentication.service';
 
 @Component({
   selector: 'app-checkout',
@@ -34,6 +35,8 @@ export class CheckoutPage implements OnInit {
   processing: boolean;
   invalidError: any;
   notes: string;
+  user: AccountInterface;
+
   extraData = {
     "name": "",
     "address_city": "",
@@ -50,7 +53,8 @@ export class CheckoutPage implements OnInit {
     private cartService: CartService,
     private api: ApiService,
     private geolocation: Geolocation,
-    private alert: AlertController
+    private alert: AlertController,
+    private auth: AuthenticationService
   ) { 
     //@ts-ignore
     this.geocodeKey = process.env.NODE_ENV === "production" ? Config.production.GEOCODE_KEY : Config.development.GEOCODE_KEY;
@@ -99,6 +103,7 @@ export class CheckoutPage implements OnInit {
       observable.subscribe((res) => {
         // @ts-ignore
         const data = res.data;
+        this.user = data;
         if (data.location) {
           this.mapLat = data.location.lat;
           this.mapLng = data.location.lng;
@@ -201,7 +206,7 @@ export class CheckoutPage implements OnInit {
   }
 
 
-  order( token:StripeToken ){
+  order( token:StripeToken|string ){
     this.processing = true;
     if (!this.address || ! this.location) {
       this.showAlert("Notice", "Please set address", "OK");
@@ -215,14 +220,40 @@ export class CheckoutPage implements OnInit {
     }).then(observable => {
       observable.subscribe((data:any) => {
         if (data.success) { 
-          this.showAlert("Notice", "Ordered successfully", "OK");
-          this.cartService.clearCart();
+          if (token === "wechat") {
+            this.wechatPay(data.orderId);
+          } else {
+            this.showAlert("Notice", "Ordered successfully", "OK");
+            this.cartService.clearCart();
+          }
         } else {
           this.showAlert("Notice", "Order failed", "OK");
         }
       })
     }).finally(() => {
       this.processing = false;
+    })
+  }
+
+  async wechatPay(orderId: string) {
+    const token:string = <string> await this.auth.getToken();
+    this.api.v1().post("/ClientPayments/snappayCharge", {
+      orderId,
+      amount: this.summary.total,
+      merchantName: 'duocun',
+      paymentMethod: 'WECHATPAY',
+      clientId: this.user._id,
+      clientName: this.user.username,
+      Authorization: token.replace("Bearer ", "")
+    }).then(observable => {
+      observable.subscribe((res: any) => {
+        if (res.msg === "success") {
+          window.location.href = res.data[0].h5pay_url;
+        } else {
+          this.showAlert("Notice", "Payment failed", "OK");
+        }
+        // this.cartService.clearCart();
+      })
     })
   }
 

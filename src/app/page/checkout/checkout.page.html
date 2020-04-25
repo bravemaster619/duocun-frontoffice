@@ -102,10 +102,12 @@
           (tokenChange)="order($event)"
         >
         </stripe-card>
-        <ion-button (click)="stripeCard.createToken(extraData)" color="primary" size="small" expand="full">
-          <ion-icon name="cash-outline"></ion-icon>
-          {{"Pay"|translate}}
+        <ion-button [disabled]="processing" (click)="stripeCard.createToken(extraData)" color="primary" size="small" expand="full">
+          {{"Stripe"|translate}}
         </ion-button>
+      </ion-col>
+      <ion-col size="12" align="center">
+        <ion-button [disabled]="processing" color="success" size="small" expand="full" (click)="order('wechat')">{{"Wechat Pay"|translate}}</ion-button>
       </ion-col>
     </ion-row>
     <ion-row class="ion-padding">

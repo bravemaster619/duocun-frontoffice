@@ -11,6 +11,7 @@ export interface LocationInterface {
 }
 
 export interface AccountInterface {
+  _id?: string;
   username?: string;
   password?: string;
   passwordConfirmation?: string;

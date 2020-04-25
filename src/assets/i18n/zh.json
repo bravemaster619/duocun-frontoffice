@@ -70,5 +70,6 @@
     "Ordered successfully": "谢谢您的订单",
     "Your card number is incomplete.": "您的卡号不完整",
     "Your card's expiration date is incomplete.": "您的卡的到期日期不完整。",
-    "Notes": "备注"
+    "Notes": "备注",
+    "Wechat Pay": "微信支付"
 }
