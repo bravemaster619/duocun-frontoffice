@@ -70,5 +70,6 @@
     "Registration failed": "Registration failed",
     "Ordered successfully": "Ordered successfully",
     "Your card's expiration date is incomplete.": "Your card's expiration date is incomplete.",
-    "Notes": "Notes"
+    "Notes": "Notes",
+    "Wechat Pay": "Wechat Pay"
 }
