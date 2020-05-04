@@ -5,7 +5,7 @@
 
 # Important
 
-This repository is no longer supported. Moved to [duocun-mall](https://github.com/duocun/duocun-mall)
+This repository is no longer supported. Moved to [duocun/duocun-mall](https://github.com/duocun/duocun-mall)
 
 # Overview
 
